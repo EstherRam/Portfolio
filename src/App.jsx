@@ -1,14 +1,4 @@
-/**
- * Interaction Design Portfolio — Internship Edition
- * Author: Esther Ramcharan, 2025
- *
- * References:
- * - React Docs (components/state): https://react.dev/learn
- * - Managing UI state patterns: https://react.dev/learn/managing-state
- * - MDN (JS/HTML/CSS): https://developer.mozilla.org/en-US/
- */
-
-/**
+ /**
  * Interaction Design Portfolio — Internship + School
  * Author: Esther Ramcharan, 2025
  *
@@ -45,7 +35,6 @@ const SectionTitle = ({ kicker, title, subtitle }) => (
 
 /* ---------- Internship case studies (ordered 1–7) ---------- */
 const projects = [
-  /* 1 */
   {
     order: 1,
     id: "cmpa-audit",
@@ -81,8 +70,6 @@ const projects = [
         "Pairing WCAG with heuristics, plus visual communication (annotations), made decisions faster and clearer.",
     },
   },
-
-  /* 2 */
   {
     order: 2,
     id: "renew-phase1",
@@ -119,8 +106,6 @@ const projects = [
         "Turning findings into developer-friendly artifacts (flows/wireframes) is what moves teams quickly.",
     },
   },
-
-  /* 3 */
   {
     order: 3,
     id: "tickets",
@@ -156,8 +141,6 @@ const projects = [
         "Precision and visuals turn tickets into mini design specs the whole team can act on.",
     },
   },
-
-  /* 4 */
   {
     order: 4,
     id: "verification-proposal",
@@ -193,8 +176,6 @@ const projects = [
         "Balancing user dignity with security is a design problem; flows + matrix helped move the decision forward.",
     },
   },
-
-  /* 5 */
   {
     order: 5,
     id: "browse-search-79",
@@ -230,8 +211,6 @@ const projects = [
         "Mode persistence matters—users shouldn’t feel they start over when switching context.",
     },
   },
-
-  /* 6 */
   {
     order: 6,
     id: "ux-playbook",
@@ -267,8 +246,6 @@ const projects = [
         "A living playbook turns scattered knowledge into team leverage.",
     },
   },
-
-  /* 7 */
   {
     order: 7,
     id: "backlog-audit",
@@ -324,11 +301,11 @@ const schoolProjects = [
         "New students felt overwhelmed; map apps were precise but not friendly for on-foot, landmark-based navigation.",
       process: [
         "Intercept interviews + quick journey mapping",
-        "Paper → mid-fi wireframes; 2 rounds of usability testing",
+        "Paper -> mid-fi wireframes; 2 rounds of usability testing",
         "Information architecture tuned for single-path clarity",
       ],
       solution: [
-        "‘Next Landmark’ guidance instead of dense map labels",
+        "'Next Landmark' guidance instead of dense map labels",
         "Accessible routes toggle and step contrast checks",
         "Context chips (restrooms, elevators, help desks)",
       ],
@@ -356,7 +333,7 @@ const schoolProjects = [
         "Students over-spent or defaulted to the same meals; staff struggled with forecasting.",
       process: [
         "Diary study (1 week) on choices + constraints",
-        "Flow design for ‘Plan in 2 minutes’ path",
+        "Flow design for 'Plan in 2 minutes' path",
         "Mid-fi prototype with copy-first content design",
       ],
       solution: [
@@ -385,7 +362,7 @@ const schoolProjects = [
       overview:
         "Course project to redesign a kiosk for mixed-age visitors with varying tech familiarity.",
       problem:
-        "Original kiosk hid key actions, had small touch targets, and unclear ‘back to exhibit’ paths.",
+        "Original kiosk hid key actions, had small touch targets, and unclear 'back to exhibit' paths.",
       process: [
         "Heuristic audit + field observations",
         "Tap-target sizing study; color/contrast tests",
@@ -393,12 +370,12 @@ const schoolProjects = [
       ],
       solution: [
         "Large targets with 44px min touch area",
-        "Persistent ‘Back to Exhibit’ affordance",
+        "Persistent 'Back to Exhibit' affordance",
         "Narrative browse (People • Places • Objects)",
       ],
       impact: [
         "Error taps reduced in testing by 41%",
-        "Dwell time ↑ while exits became clearer",
+        "Dwell time increased while exits became clearer",
       ],
       reflection:
         "Narrative framing plus accessibility basics creates a friendlier public-display UX.",
@@ -630,3 +607,4 @@ export default function App() {
     </div>
   );
 }
+
