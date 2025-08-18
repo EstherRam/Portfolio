@@ -4,7 +4,6 @@
  *
  * References:
  * - React Docs (component structure): https://react.dev/learn
- * - Tailwind CSS Docs (utility classes): https://tailwindcss.com/docs
  * - Modal pattern (React): https://react.dev/learn/managing-state
  * - JavaScript reference: https://developer.mozilla.org/en-US/
  */
