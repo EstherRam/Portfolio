@@ -1,9 +1,9 @@
 {
-  // Project configuration for dependencies and scripts
   // References:
-  // - NPM package.json guide: https://docs.npmjs.com/cli/v10/configuring-npm/package-json
-  // - gh-pages deployment: https://github.com/tschaub/gh-pages
+  // - npm Docs (scripts): https://docs.npmjs.com/cli/v10/using-npm/scripts
+  // - Vite Docs: https://vitejs.dev/guide/
 }
+
 
 {
   "name": "portfolio",
