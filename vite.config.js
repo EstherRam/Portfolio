@@ -9,8 +9,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio/'   // EXACT repo name, case-sensitive
+  base: '/Portfolio/', // EXACT repo name (case-sensitive)
 })
+
 
 
 
