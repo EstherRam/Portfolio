@@ -4,11 +4,12 @@
 # – Pages + Actions: https://docs.github.com/actions/deployment/deploying-to-github-pages
 # – Vite static deploy: https://vitejs.dev/guide/static-deploy.html
 
-name: pages build and deployment
+name: Build and Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,7 +18,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -26,19 +27,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # If you don't have package-lock.json, use `npm install`
+      # Use install (not ci) so it works even if package-lock.json isn’t perfect
       - name: Install deps
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+        run: npm install
 
       - name: Build
         run: npm run build
@@ -58,5 +54,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
 
