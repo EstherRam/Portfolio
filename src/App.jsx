@@ -106,7 +106,7 @@ export default function App() {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-2">
             <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-900">
-              Hi, I’m an <span className="text-sky-700">Interaction Design</span> student
+              Hi, I’m Esther Ramcharan <span className="text-sky-700">An Interaction Design</span> Student
             </h1>
             <p className="mt-4 text-slate-600 leading-relaxed">
               I design accessible, thoughtful experiences—balancing research, systems thinking,
