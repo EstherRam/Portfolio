@@ -39,7 +39,7 @@ const projects = [
     title: "CMPA Website Accessibility Audit",
     role: "UX Research & Interaction Design",
     year: "2025",
-    tags: ["WCAG 2.1", "Heuristic Eval", "Annotated Screens"],
+    tags: ["WCAG 2.1", "Heuristic Eval", "Annotated Screens", "Wireframes"],
     summary:
       "A thorough accessibility & usability audit of the CMPA site with prioritized fixes for contrast, navigation, and checkout.",
     heroColor: "from-sky-100 to-white",
