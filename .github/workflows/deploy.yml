@@ -4,52 +4,38 @@
 # – Pages + Actions: https://docs.github.com/actions/deployment/deploying-to-github-pages
 # – Vite static deploy: https://vitejs.dev/guide/static-deploy.html
 
-name: Build and Deploy
+name: Build and Publish to gh-pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]  # build whenever you push to main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write  # needed to push to gh-pages
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Use Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install
-        run: npm ci
+      - name: Install deps
+        run: npm install --no-audit --no-fund
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish dist to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./dist
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          force_orphan: true  # creates a clean one-file-only history for gh-pages
