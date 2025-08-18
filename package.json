@@ -1,4 +1,11 @@
 {
+  // Project configuration for dependencies and scripts
+  // References:
+  // - NPM package.json guide: https://docs.npmjs.com/cli/v10/configuring-npm/package-json
+  // - gh-pages deployment: https://github.com/tschaub/gh-pages
+}
+
+{
   "name": "portfolio",
   "version": "1.0.0",
   "homepage": "https://EstherRam.github.io/Portfolio/",
