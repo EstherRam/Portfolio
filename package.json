@@ -1,11 +1,4 @@
 {
-  // References:
-  // - npm Docs (scripts): https://docs.npmjs.com/cli/v10/using-npm/scripts
-  // - Vite Docs: https://vitejs.dev/guide/
-}
-
-
-{
   "name": "portfolio",
   "version": "1.0.0",
   "homepage": "https://EstherRam.github.io/Portfolio/",
