@@ -212,41 +212,53 @@ export default function App() {
       <main id="main">
         {/* Internship Work (unchanged layout) */}
         <section id="work" className="mx-auto max-w-6xl px-4 pt-6 pb-16">
-          <SectionTitle
-            kicker="Selected Work"
-            title="Internship Case Studies"
-            subtitle="Process over pixels: problem framing, options explored, and shipped solutions."
-          />
+  <SectionTitle
+    kicker="Selected Work"
+    title="Internship Case Studies"
+    subtitle="Process over pixels. Each project shows how I framed the problem, explored options, and shipped an informed solution."
+  />
 
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {projects.map((p) => (
-              <article
-                key={p.id}
-                className="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-md transition"
-              >
-                <div className={`h-32 bg-gradient-to-r ${p.heroColor}`} aria-hidden />
-                <div className="p-5">
-                  <div className="flex items-center justify-between text-xs text-slate-500">
-                    <span>{p.role}</span>
-                    <time>{p.year}</time>
-                  </div>
-                  <h3 className="mt-2 text-lg font-medium text-slate-900">{p.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600 line-clamp-3">{p.summary}</p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {p.tags.map((t) => <Tag key={t}>{t}</Tag>)}
-                  </div>
-                  <button
-                    onClick={() => setOpenId(p.id)}
-                    className="mt-4 w-full rounded-xl bg-slate-900 text-white py-2 text-sm hover:bg-slate-800"
-                  >
-                    View case study
-                  </button>
-                </div>
-              </article>
-            ))}
+  <div className="mt-8 grid md:grid-cols-3 gap-6">
+    {projects
+      .sort((a, b) => a.order - b.order)
+      .map((p) => (
+        <article
+          key={p.id}
+          className="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-md transition"
+        >
+          {/* gradient strip on top */}
+          <div className={`h-32 bg-gradient-to-r ${p.heroColor}`} aria-hidden />
+          <div className="p-5">
+            <div className="flex items-center justify-between text-xs text-slate-500">
+              <span>{p.role}</span>
+              <time>{p.year}</time>
+            </div>
+
+            <h3 className="mt-2 text-lg font-medium text-slate-900">
+              {p.order}. {p.title}
+            </h3>
+
+            <p className="mt-2 text-sm text-slate-600 line-clamp-3">
+              {p.summary}
+            </p>
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              {p.tags.map((t) => (
+                <Tag key={t}>{t}</Tag>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setOpenId(p.id)}
+              className="mt-4 w-full rounded-xl bg-slate-900 text-white py-2 text-sm hover:bg-slate-800"
+            >
+              View case study
+            </button>
           </div>
-        </section>
-
+        </article>
+      ))}
+  </div>
+</section>
         {/* NEW: School Projects (same card style) */}
         <section id="school" className="mx-auto max-w-6xl px-4 pt-0 pb-16">
           <SectionTitle
