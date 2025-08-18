@@ -1,3 +1,15 @@
+/**
+ * Interaction Design Portfolio
+ * Built by Esther Ramcharan, 2025
+ *
+ * References:
+ * - React Docs (component structure): https://react.dev/learn
+ * - Tailwind CSS Docs (utility classes): https://tailwindcss.com/docs
+ * - Modal pattern (React): https://react.dev/learn/managing-state
+ * - JavaScript reference: https://developer.mozilla.org/en-US/
+ */
+
+
 import React, { useState } from "react";
 
 const Tag = ({ children }) => (
