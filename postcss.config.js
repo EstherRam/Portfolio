@@ -4,9 +4,9 @@
  * - PostCSS: https://postcss.org/
  * - Tailwind + PostCSS setup: https://tailwindcss.com/docs/installation
  */
-export default {
+module.exports = {
   plugins: {
     tailwindcss: {},
-    autoprefixer: {},
-  },
+    autoprefixer: {}
+  }
 };
