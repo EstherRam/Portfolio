@@ -8,6 +8,16 @@
  * - MDN (JS/HTML/CSS): https://developer.mozilla.org/en-US/
  */
 
+/**
+ * Interaction Design Portfolio — Internship + School
+ * Author: Esther Ramcharan, 2025
+ *
+ * References:
+ * - React Docs (components/state): https://react.dev/learn
+ * - Managing UI state patterns: https://react.dev/learn/managing-state
+ * - MDN (JS/HTML/CSS): https://developer.mozilla.org/en-US/
+ */
+
 import React, { useState } from "react";
 
 /* ---------- UI helpers ---------- */
@@ -33,7 +43,7 @@ const SectionTitle = ({ kicker, title, subtitle }) => (
   </div>
 );
 
-/* ---------- Internship case studies (ordered) ---------- */
+/* ---------- Internship case studies (ordered 1–7) ---------- */
 const projects = [
   /* 1 */
   {
@@ -296,11 +306,111 @@ const projects = [
   },
 ];
 
+/* ---------- School projects (3) ---------- */
+const schoolProjects = [
+  {
+    id: "sp-wayfinding",
+    title: "Wayfinding App Concept",
+    role: "Coursework — Interaction Design",
+    year: "2024",
+    tags: ["Mobile", "Mapping", "Usability Testing"],
+    summary:
+      "A campus wayfinding app that reduces decision friction with step-by-step landmarks and accessible routing.",
+    heroColor: "from-violet-100 to-white",
+    details: {
+      overview:
+        "Studio brief: design a navigation tool for new students. Focus on clarity, accessibility, and low-cognitive-load decisions.",
+      problem:
+        "New students felt overwhelmed; map apps were precise but not friendly for on-foot, landmark-based navigation.",
+      process: [
+        "Intercept interviews + quick journey mapping",
+        "Paper → mid-fi wireframes; 2 rounds of usability testing",
+        "Information architecture tuned for single-path clarity",
+      ],
+      solution: [
+        "‘Next Landmark’ guidance instead of dense map labels",
+        "Accessible routes toggle and step contrast checks",
+        "Context chips (restrooms, elevators, help desks)",
+      ],
+      impact: [
+        "Task success +27% vs baseline map app",
+        "Time-on-task down 18% in final test",
+      ],
+      reflection:
+        "Chunking information and designing for anxiety reduction matters as much as raw accuracy.",
+    },
+  },
+  {
+    id: "sp-mealplanner",
+    title: "Campus Meal Planner",
+    role: "Coursework — Service/UX",
+    year: "2024",
+    tags: ["Flows", "Content Design", "Prototyping"],
+    summary:
+      "A weekly meal planner that balances cost, nutrition, and cafeteria inventory to cut waste and choice fatigue.",
+    heroColor: "from-lime-100 to-white",
+    details: {
+      overview:
+        "Brief: help students plan affordable meals using real cafeteria menus and stock.",
+      problem:
+        "Students over-spent or defaulted to the same meals; staff struggled with forecasting.",
+      process: [
+        "Diary study (1 week) on choices + constraints",
+        "Flow design for ‘Plan in 2 minutes’ path",
+        "Mid-fi prototype with copy-first content design",
+      ],
+      solution: [
+        "One-tap weekly template + swap suggestions",
+        "Budget + nutrition badges at list level",
+        "Out-of-stock warnings from staff inputs",
+      ],
+      impact: [
+        "Prototype study: 84% completed a weekly plan in < 3 min",
+        "Staff pilots predicted 6–10% waste reduction",
+      ],
+      reflection:
+        "Small content cues (badges, defaults) drive behavior more than heavy analytics.",
+    },
+  },
+  {
+    id: "sp-museumkiosk",
+    title: "Museum Kiosk Redesign",
+    role: "Coursework — Interaction Design",
+    year: "2023",
+    tags: ["Kiosk", "Accessibility", "Microcopy"],
+    summary:
+      "Touch kiosk for a small museum with better reach targets, contrast, and story-led navigation.",
+    heroColor: "from-orange-100 to-white",
+    details: {
+      overview:
+        "Course project to redesign a kiosk for mixed-age visitors with varying tech familiarity.",
+      problem:
+        "Original kiosk hid key actions, had small touch targets, and unclear ‘back to exhibit’ paths.",
+      process: [
+        "Heuristic audit + field observations",
+        "Tap-target sizing study; color/contrast tests",
+        "Proto with story-first entry points",
+      ],
+      solution: [
+        "Large targets with 44px min touch area",
+        "Persistent ‘Back to Exhibit’ affordance",
+        "Narrative browse (People • Places • Objects)",
+      ],
+      impact: [
+        "Error taps reduced in testing by 41%",
+        "Dwell time ↑ while exits became clearer",
+      ],
+      reflection:
+        "Narrative framing plus accessibility basics creates a friendlier public-display UX.",
+    },
+  },
+];
+
 /* ---------- Page ---------- */
 export default function App() {
   const [openId, setOpenId] = useState(null);
   const ordered = [...projects].sort((a, b) => a.order - b.order);
-  const openProject = ordered.find((p) => p.id === openId);
+  const openProject = [...ordered, ...schoolProjects].find((p) => p.id === openId);
   const isSingle = ordered.length === 1;
 
   return (
@@ -313,17 +423,10 @@ export default function App() {
             <span className="font-semibold">Internship Portfolio — Esther Ramcharan</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#work" className="hover:text-sky-700">
-              Internship
-            </a>
+            <a href="#work" className="hover:text-sky-700">Internship</a>
+            <a href="#school" className="hover:text-sky-700">School</a>
             <a href="#about" className="hover:text-sky-700">About</a>
             <a href="#contact" className="hover:text-sky-700">Contact</a>
-            <a
-              href="#resume"
-              className="rounded-xl border border-slate-300 px-3 py-1.5 hover:border-sky-400 hover:text-sky-700"
-            >
-              Resume
-            </a>
           </nav>
         </div>
       </header>
@@ -337,13 +440,13 @@ export default function App() {
             </h1>
             <p className="mt-4 text-slate-600 leading-relaxed">
               I design accessible, thoughtful experiences—balancing research, systems thinking, and clear UI.
-              Below is my internship work, ordered by impact and scope, with dev-ready artifacts and outcomes.
+              Below is my internship work (ordered 1–7) plus three selected school projects.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Work Section */}
+      {/* Internship Section */}
       <main id="main">
         <section id="work" className="mx-auto max-w-6xl px-4 pt-6 pb-16">
           <SectionTitle
@@ -352,7 +455,7 @@ export default function App() {
             subtitle={
               isSingle
                 ? "Process over pixels: one detailed case study from my internship."
-                                : "Each study shows process, artifacts, and impact from my 2025 internship — ordered 1 to 7."
+                : "Each study shows process, artifacts, and impact from my 2025 internship — ordered 1 to 7."
             }
           />
 
@@ -380,9 +483,41 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        {/* School Projects */}
+        <section id="school" className="mx-auto max-w-6xl px-4 pt-2 pb-16">
+          <SectionTitle
+            kicker="Coursework"
+            title="School Projects"
+            subtitle="Three selected class projects showing research, flows, prototyping, and accessibility in practice."
+          />
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {schoolProjects.map((p) => (
+              <div
+                key={p.id}
+                onClick={() => setOpenId(p.id)}
+                className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${p.heroColor} p-5 hover:shadow-md transition cursor-pointer`}
+              >
+                <h3 className="text-lg font-semibold text-slate-900 group-hover:text-sky-700">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-slate-500 mt-1">
+                  {p.role} · {p.year}
+                </p>
+                <p className="mt-3 text-sm text-slate-600">{p.summary}</p>
+                <div className="flex flex-wrap gap-1 mt-3">
+                  {p.tags.map((t) => (
+                    <Tag key={t}>{t}</Tag>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
-      {/* Modal */}
+      {/* Modal (works for both internship & school) */}
       {openProject && (
         <div
           className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/50 p-6"
@@ -395,11 +530,12 @@ export default function App() {
             <button
               onClick={() => setOpenId(null)}
               className="absolute top-3 right-3 rounded-full p-2 hover:bg-slate-100"
+              aria-label="Close"
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-slate-900">
-              {openProject.order}. {openProject.title}
+              {openProject.order ? `${openProject.order}. ` : ""}{openProject.title}
             </h3>
             <p className="text-sm text-slate-500 mt-1">
               {openProject.role} · {openProject.year}
@@ -414,34 +550,42 @@ export default function App() {
                 <h4 className="font-medium text-slate-900">Problem</h4>
                 <p>{openProject.details.problem}</p>
               </div>
-              <div>
-                <h4 className="font-medium text-slate-900">Process</h4>
-                <ul className="list-disc list-inside space-y-1">
-                  {openProject.details.process.map((step, i) => (
-                    <li key={i}>{step}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-slate-900">Solution</h4>
-                <ul className="list-disc list-inside space-y-1">
-                  {openProject.details.solution.map((s, i) => (
-                    <li key={i}>{s}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-slate-900">Impact</h4>
-                <ul className="list-disc list-inside space-y-1">
-                  {openProject.details.impact.map((s, i) => (
-                    <li key={i}>{s}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-slate-900">Reflection</h4>
-                <p>{openProject.details.reflection}</p>
-              </div>
+              {openProject.details.process?.length > 0 && (
+                <div>
+                  <h4 className="font-medium text-slate-900">Process</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    {openProject.details.process.map((step, i) => (
+                      <li key={i}>{step}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {openProject.details.solution?.length > 0 && (
+                <div>
+                  <h4 className="font-medium text-slate-900">Solution</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    {openProject.details.solution.map((s, i) => (
+                      <li key={i}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {openProject.details.impact?.length > 0 && (
+                <div>
+                  <h4 className="font-medium text-slate-900">Impact</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    {openProject.details.impact.map((s, i) => (
+                      <li key={i}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {openProject.details.reflection && (
+                <div>
+                  <h4 className="font-medium text-slate-900">Reflection</h4>
+                  <p>{openProject.details.reflection}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -465,16 +609,16 @@ export default function App() {
             <p className="mt-3 text-slate-600 text-sm">
               Email:{" "}
               <a
-                href="mailto:ramchaes@sheridancollege.ca"
+                href="mailto:estherramcharan@example.com"
                 className="text-sky-700 hover:underline"
               >
-                ramchaes@sheridancollege.ca
+                estherramcharan@example.com
               </a>
             </p>
             <p className="text-slate-600 text-sm">
-              Linkedin:{" "}
+              Portfolio:{" "}
               <a
-                href="www.linkedin.com/in/estram"
+                href="https://ramchaes.myportfolio.com/work"
                 className="text-sky-700 hover:underline"
               >
                 ramchaes.myportfolio.com/work
@@ -486,4 +630,3 @@ export default function App() {
     </div>
   );
 }
-
