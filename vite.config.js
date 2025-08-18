@@ -7,6 +7,6 @@ import react from '@vitejs/plugin-react'
 // – Vite + Pages: https://vitejs.dev/guide/static-deploy.html
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio/', //repo name
+  base: '/Portfolio/'
 })
 
