@@ -8,9 +8,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Accessible focus ring */
-:focus-visible {
-  outline: 2px solid #38bdf8;
-  outline-offset: 2px;
-}
+/* Quick visible background so we know Tailwind loaded */
+body { @apply bg-slate-50; }
+
+/* Focus ring */
+:focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }
 
