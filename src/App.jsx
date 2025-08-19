@@ -178,36 +178,36 @@ const projects = [
   {
     id: "media-player",
     order: 5,
-    title: "Media Player Improvements",
+    title: "Placeholder",
     summary:
-      "Refined playback with ‘Continue Listening’ and clearer states across audiobooks and podcasts.",
+      "Placeholder.",
     role: "UX/UI Design",
     year: "2025",
     tags: ["Player UI", "Wireframes", "Usability Fixes"],
     heroColor: "from-yellow-100 to-white",
     image: "https://placehold.co/800x480?text=Media+Player",
     details: {
-      overview:
-        "Playback cohesion and clarity across content types increased user confidence.",
+       overview:
+        "placeholder.",
       problem:
-        "‘Up Next’ concept caused confusion; controls/state visibility inconsistent.",
+        "placeholder.",
       process: [
-        "Issue logging with STR + visuals",
-        "Wireframes for mini-player + states",
-        "Alignment with devs via tickets",
+        "placeholder",
+        "placeholder",
+        "placeholder",
       ],
       solution: [
-        "‘Continue’ section replaces ‘Up Next’",
-        "Consistent control placement",
-        "Explicit playing/paused states",
+        "placeholder",
+        "placeholder",
+        "placeholder",
       ],
       impact: [
-        "Clearer mental model",
-        "Reduced mis-taps",
-        "Fewer playback tickets",
+        "placeholder",
+        "placeholder",
+        "placeholder",
       ],
       reflection:
-        "Naming + state visibility are core to media UX trust.",
+        "placeholder",
     },
   },
   {
