@@ -213,36 +213,36 @@ const projects = [
   {
     id: "mobile-web",
     order: 6,
-    title: "Mobile → Web Transition",
+    title: "Placeholder",
     summary:
-      "Planned responsive web adaptation with simplified navigation and information architecture.",
+      "Placeholder",
     role: "Interaction Design",
     year: "2025",
-    tags: ["Responsive", "Wireframes", "Navigation"],
+    tags: ["placeholder", "placeholder", "placeholder"],
     heroColor: "from-purple-100 to-white",
     image: "https://placehold.co/800x480?text=Mobile+to+Web",
     details: {
       overview:
-        "Extended the app experience to web with layout + nav patterns.",
+        "placeholder.",
       problem:
-        "Mobile flows didn’t translate 1:1 to desktop; risk of clutter.",
+        "placeholder.",
       process: [
-        "IA rationalization",
-        "Grid/layout studies",
-        "Key templates in mid-fi",
+        "placeholder",
+        "placeholder",
+        "placeholder",
       ],
       solution: [
-        "Simpler global nav + entry points",
-        "Reusable content blocks",
-        "Consistent responsive rules",
+        "placeholder",
+        "placeholder",
+        "placeholder",
       ],
       impact: [
-        "Lower orientation time",
-        "Fewer dead-ends",
-        "Maintainable pattern library",
+        "placeholder",
+        "placeholder",
+        "placeholder",
       ],
       reflection:
-        "Start with content structure before pixels for web parity.",
+        "placeholder",
     },
   },
   {
