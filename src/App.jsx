@@ -240,47 +240,49 @@ const projects = [
 ];
 
 /* ---------- School projects (3) ---------- */
+/* ---------- School projects (3) ---------- */
 const schoolProjects = [
   {
-    {
-  id: "sp-visualize-experience",
-  title: "Visualize an Experience — Leg Day Journey",
-  role: "Coursework — Information/Interaction Design",
-  year: "2023",
-  tags: ["Information Visualization", "Diary Study", "Emotional Journey", "Iteration"],
-  heroColor: "from-violet-100 to-white",
-  image: "https://placehold.co/800x480?text=Visualize+an+Experience",
-  summary:
-    "A visual narrative of a leg-day gym routine, mapping events → thoughts → feelings → outcomes from wake-up through the workday. Raw notes were structured into a Thought Log, then iteratively designed into a clear, hierarchical visualization.",
-  details: {
-    overview:
-      "Captured a real routine (alarm → gym → work) and transformed it into a visual story that conveys mental, emotional, and physical states over time, using structured logs and iterative design to clarify hierarchy and flow.",
-    problem:
-      "Raw, moment-to-moment thoughts were noisy and hard to compare. Early layouts struggled with hierarchy, contrast, and a clear connective thread between events, inner dialogue, and emotions.",
-    process: [
-      "Field notes on Samsung Notes during the journey (events, thoughts, feelings, outcomes)",
-      "Transcribed into a structured Thought Log (framework inspired by TherapistAid) for deeper analysis",
-      "Mapped the E-T-F-O model across the timeline; explored color/emoji/icon encodings",
-      "Multiple iterations to improve hierarchy, legibility, and connective lines showing the ‘train of thought’"
-    ],
-    solution: [
-      "Single timeline from alarm to work, with clear typographic hierarchy and sectioning",
-      "Event • Thought • Feeling • Result groupings linked by subtle graph lines/footprints to show the journey",
-      "Refined iconography and restrained color so meaning reads first, style second"
-    ],
-    problemImage: "https://placehold.co/1200x700?text=Visualize+Experience+Problem",
-    solutionImages: [
-      "Visual.png"
-    ],
-    impact: [
-      "Cleaner hierarchy makes it easy to scan how thoughts and feelings evolve across the routine",
-      "Connective visual devices (lines/footprints) make causal links more apparent at a glance"
-    ],
-    reflection:
-      "Constraining color and emphasizing structure clarified the emotional arc without visual noise."
-  }
-}
-  /* ====== NEW #2: VIMEO DATA TRANSPARENCY ====== */
+    id: "sp-visualize-experience",
+    title: "Visualize an Experience — Leg Day Journey",
+    role: "Coursework — Information/Interaction Design",
+    year: "2023",
+    tags: ["Information Visualization", "Diary Study", "Emotional Journey", "Iteration"],
+    heroColor: "from-violet-100 to-white",
+    image: "https://placehold.co/800x480?text=Visualize+an+Experience",
+    summary:
+      "A visual narrative of a leg-day gym routine, mapping events → thoughts → feelings → outcomes from wake-up through the workday. Raw notes were structured into a Thought Log, then iteratively designed into a clear, hierarchical visualization.",
+    details: {
+      overview:
+        "Captured a real routine (alarm → gym → work) and transformed it into a visual story that conveys mental, emotional, and physical states over time, using structured logs and iterative design to clarify hierarchy and flow.",
+      problem:
+        "Raw, moment-to-moment thoughts were noisy and hard to compare. Early layouts struggled with hierarchy, contrast, and a clear connective thread between events, inner dialogue, and emotions.",
+      process: [
+        "Field notes on Samsung Notes during the journey (events, thoughts, feelings, outcomes)",
+        "Transcribed into a structured Thought Log (framework inspired by TherapistAid) for deeper analysis",
+        "Mapped the E-T-F-O model across the timeline; explored color/emoji/icon encodings",
+        "Multiple iterations to improve hierarchy, legibility, and connective lines showing the ‘train of thought’"
+      ],
+      solution: [
+        "Single timeline from alarm to work, with clear typographic hierarchy and sectioning",
+        "Event • Thought • Feeling • Result groupings linked by subtle graph lines/footprints to show the journey",
+        "Refined iconography and restrained color so meaning reads first, style second"
+      ],
+      problemImage: "https://placehold.co/1200x700?text=Visualize+Experience+Problem",
+      solutionImages: [
+        "Visual.png",
+        "https://placehold.co/1200x700?text=Visualize+Experience+Solution+2"
+      ],
+      impact: [
+        "Cleaner hierarchy makes it easy to scan how thoughts and feelings evolve across the routine",
+        "Connective visual devices (lines/footprints) make causal links more apparent at a glance"
+      ],
+      reflection:
+        "Constraining color and emphasizing structure clarified the emotional arc without visual noise."
+    }
+  },
+
+  /* ====== #2: VIMEO DATA TRANSPARENCY ====== */
   {
     id: "sp-vimeo-transparency",
     title: "Vimeo Data Transparency Prototype",
@@ -290,37 +292,33 @@ const schoolProjects = [
     heroColor: "from-cyan-100 to-white",
     image: "Data.png",
     summary:
-      "The digital service I selected for my project was Vimeo. This choice was driven by my research into data transparency issues among various online services. Among the platforms I explored, Vimeo stood out as the only service that exhibited a significant dark pattern related to data transparency. Unlike other websites and applications I investigated, obtaining information about privacy and data collection on Vimeo was a challenging task. In contrast to the user-friendly approaches of other platforms, Vimeo's privacy details were conspicuously absent from the privacy section. Instead, they were hidden under the legal tab, located at the very bottom of the homepage, with the text appearing in a less prominent, grayed-out font. This discovery highlighted a substantial ethical concern, making Vimeo an ideal candidate for addressing the need to create a more user-friendly system for identifying and controlling, to a reasonable extent, the information collected and how it is utilized.",
+      "Vimeo was selected after finding a data-transparency dark pattern: privacy details are hard to discover—tucked under a low-contrast footer Legal tab—unlike clearer patterns on other services. The project proposes a more user-friendly way to see and control what’s collected and how it’s used.",
     details: {
       overview:
-        "A prototype to reduce dark patterns in Vimeo’s privacy UX by surfacing plain-language disclosures and task-based controls for data collection and sharing.",
+        "Prototype to replace hidden legalese with plain-language disclosures and a focused preference flow for data collection/sharing.",
       problem:
-        "Key privacy and data-collection details are hard to find—hidden under a footer ‘Legal’ tab with low-contrast text—creating a data-transparency dark pattern.",
+        "Key privacy info is not obvious—hidden under a footer ‘Legal’ tab with subdued styling—creating a transparency dark pattern.",
       process: [
-        "POEMS analysis (People, Objects, Environments, Messages, Services) of Vimeo’s data touchpoints",
-        "Five Human Factors framing (physical, cognitive, social, cultural, emotional) and sentiment scan",
-        "Competitive/heuristic review of transparency patterns",
-        "Wireframing from low → mid → high fidelity for clearer IA and data-preference flows",
+        "POEMS analysis of Vimeo’s data touchpoints and messaging",
+        "Five Human Factors framing (physical/cognitive/social/cultural/emotional)",
+        "Competitive/heuristic pass on transparency patterns",
+        "Low→mid→high fidelity wireframes; feedback-driven revisions"
       ],
       solution: [
-        "Move core privacy info from Legal → visible Privacy in main settings + footer",
-        "Add a 'Data Collection Preferences' panel with view/change/delete options",
-        "Inline consent after sign-up/login with plain-language 'we collect / we share' summaries",
-        "Contextual learn-more links; consistent, high-contrast labels",
+        "Show a Data Collection Preferences dialog after login/sign-up is submitted, with a clear notice describing defaults if no choice is made.",
+        "Use plain-language ‘we collect’ / ‘we share’ summaries with learn-more links.",
+        "Improve discoverability of privacy controls from main settings and footer."
       ],
-      // PLACEHOLDERS — swap with filenames in /public (e.g., "VimeoProblem.png")
       problemImage: "Missing.png",
-      solutionImages: [
-        "Pop.png",
-      ],
+      solutionImages: ["Pop.png", "Data.png"],   // ensures two images
       impact: [
-        "Greater transparency via clearer IA and labeling",
-        "Lower effort to discover and adjust data preferences",
-        "Ethically improved flows that avoid dark-pattern placement",
+        "Reduces effort to discover and adjust data preferences",
+        "Clearer IA and labeling increase perceived transparency",
+        "Avoids on-entry interruption in favor of task-aligned timing"
       ],
       reflection:
-        "Shifting privacy from hidden legalese to visible, task-based controls builds trust and user autonomy.",
-    },
+        "Positioning consent where users already commit (post-login) respects flow while still foregrounding control."
+    }
   },
 
   {
@@ -341,25 +339,23 @@ const schoolProjects = [
       process: [
         "Heuristic audit + field observation",
         "Tap-target sizing + contrast tests",
-        "Story-first browse prototype",
+        "Story-first browse prototype"
       ],
       solution: [
         "44px min touch targets",
         "Persistent ‘Back to Exhibit’ affordance",
-        "Narrative browse (People • Places • Objects)",
+        "Narrative browse (People • Places • Objects)"
       ],
-      // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Museum+Kiosk+Problem",
+      problemImage: "https://placehold.co/1200x700?text=Museum+Kiosk+Problem",
       solutionImages: [
         "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+1",
-        "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+2",
+        "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+2"
       ],
       impact: ["Error taps −41%", "Clearer exits; dwell time ↑"],
       reflection:
-        "Accessibility basics + narrative framing = friendlier public UX.",
-    },
-  },
+        "Accessibility basics + narrative framing = friendlier public UX."
+    }
+  }
 ];
 
 /* ---------- Page ---------- */
