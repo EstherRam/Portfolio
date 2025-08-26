@@ -223,10 +223,10 @@ const projects = [
       ],
       // PLACEHOLDERS
       problemImage:
-        "https://placehold.co/1200x700?text=Ticket+System+Problem",
+        "Doc.png",
       solutionImages: [
-        "https://placehold.co/1200x700?text=Ticket+System+Solution+1",
-        "https://placehold.co/1200x700?text=Ticket+System+Solution+2",
+        "Git.png",
+        "Ticket.png",
       ],
       impact: [
         "Reduced ambiguity and duplication",
