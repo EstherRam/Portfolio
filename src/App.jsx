@@ -80,7 +80,7 @@ const projects = [
     year: "2025",
     tags: ["Onboarding", "Security vs UX", "Flows", "Wireframes"],
     heroColor: "from-indigo-100 to-white",
-    image: "https://placehold.co/800x480?text=User+Verification+Flows",
+    image: "/Portfolio/Verify.png",
     details: {
       overview:
         "Designed a verification approach that protects content while keeping onboarding welcoming.",
