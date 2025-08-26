@@ -163,7 +163,7 @@ const projects = [
     year: "2025",
     tags: ["Wireframes", "Interaction Design", "Filtering"],
     heroColor: "from-green-100 to-white",
-    image: "https://placehold.co/800x480?text=Browse+%26+Search",
+    image: "/Portfolio/S/B.png",
     details: {
       overview:
         "Discovery felt disconnected; browse and search lived in separate patterns.",
