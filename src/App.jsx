@@ -242,43 +242,44 @@ const projects = [
 /* ---------- School projects (3) ---------- */
 const schoolProjects = [
   {
-    id: "sp-wayfinding",
-    title: "Wayfinding App Concept",
-    role: "Coursework — Interaction Design",
-    year: "2024",
-    tags: ["Mobile", "Mapping", "Usability Testing"],
-    summary:
-      "Campus wayfinding with landmark-based steps and accessible routing to reduce decision friction.",
-    heroColor: "from-violet-100 to-white",
-    image: "https://placehold.co/800x480?text=Wayfinding+App",
-    details: {
-      overview:
-        "Studio brief: navigation tool for new students emphasizing clarity and low cognitive load.",
-      problem:
-        "Precise maps aren’t always friendly for on-foot, first-week navigation.",
-      process: [
-        "Intercept interviews + journey mapping",
-        "Paper → mid-fi wireframes; 2 usability rounds",
-        "IA tuned for single-path clarity",
-      ],
-      solution: [
-        "‘Next Landmark’ guidance vs dense map labels",
-        "Accessible routes toggle + contrast checks",
-        "Context chips (restrooms, elevators, help desks)",
-      ],
-      // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Wayfinding+Problem",
-      solutionImages: [
-        "https://placehold.co/1200x700?text=Wayfinding+Solution+1",
-        "https://placehold.co/1200x700?text=Wayfinding+Solution+2",
-      ],
-      impact: ["Task success +27%", "Time-on-task −18%"],
-      reflection:
-        "Chunking information and anxiety-aware copy improved confidence.",
-    },
-  },
-
+    {
+  id: "sp-visualize-experience",
+  title: "Visualize an Experience — Leg Day Journey",
+  role: "Coursework — Information/Interaction Design",
+  year: "2023",
+  tags: ["Information Visualization", "Diary Study", "Emotional Journey", "Iteration"],
+  heroColor: "from-violet-100 to-white",
+  image: "https://placehold.co/800x480?text=Visualize+an+Experience",
+  summary:
+    "A visual narrative of a leg-day gym routine, mapping events → thoughts → feelings → outcomes from wake-up through the workday. Raw notes were structured into a Thought Log, then iteratively designed into a clear, hierarchical visualization.",
+  details: {
+    overview:
+      "Captured a real routine (alarm → gym → work) and transformed it into a visual story that conveys mental, emotional, and physical states over time, using structured logs and iterative design to clarify hierarchy and flow.",
+    problem:
+      "Raw, moment-to-moment thoughts were noisy and hard to compare. Early layouts struggled with hierarchy, contrast, and a clear connective thread between events, inner dialogue, and emotions.",
+    process: [
+      "Field notes on Samsung Notes during the journey (events, thoughts, feelings, outcomes)",
+      "Transcribed into a structured Thought Log (framework inspired by TherapistAid) for deeper analysis",
+      "Mapped the E-T-F-O model across the timeline; explored color/emoji/icon encodings",
+      "Multiple iterations to improve hierarchy, legibility, and connective lines showing the ‘train of thought’"
+    ],
+    solution: [
+      "Single timeline from alarm to work, with clear typographic hierarchy and sectioning",
+      "Event • Thought • Feeling • Result groupings linked by subtle graph lines/footprints to show the journey",
+      "Refined iconography and restrained color so meaning reads first, style second"
+    ],
+    problemImage: "https://placehold.co/1200x700?text=Visualize+Experience+Problem",
+    solutionImages: [
+      "Visual.png"
+    ],
+    impact: [
+      "Cleaner hierarchy makes it easy to scan how thoughts and feelings evolve across the routine",
+      "Connective visual devices (lines/footprints) make causal links more apparent at a glance"
+    ],
+    reflection:
+      "Constraining color and emphasizing structure clarified the emotional arc without visual noise."
+  }
+}
   /* ====== NEW #2: VIMEO DATA TRANSPARENCY ====== */
   {
     id: "sp-vimeo-transparency",
