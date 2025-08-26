@@ -51,7 +51,7 @@ const projects = [
         "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
         "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and friction for first-time users.",
-      image: "/Portfolio/Audit.png",
+      image: "/Portfolio/Audit1.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
         "WCAG 2.1 review with annotated screenshots",
@@ -62,7 +62,7 @@ const projects = [
         "Simplify checkout steps and labels",
         "Repair/add alt text, improve layout for readability",
       ],
-      image: "/Portfolio/Audit.png",
+      image: "/Portfolio/Solution.png",
       impact: [
         "Actionable Phase-1 roadmap toward WCAG 2.1 AA",
         "Reduced friction in checkout",
