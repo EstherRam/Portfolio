@@ -40,17 +40,18 @@ const projects = [
     order: 1,
     title: "CMPA Website Accessibility Audit",
     summary:
-      "Full WCAG + heuristic audit with annotated screenshots and a prioritized roadmap for CMPA’s site.",
+      "Full WCAG + heuristic audit with annotated screenshots, wireframed solutions, and a prioritized roadmap for CMPA’s site.",
     role: "UX Research & Interaction Design",
     year: "2025",
-    tags: ["WCAG 2.1", "Heuristics", "Annotated Screens", "Report"],
+    tags: ["WCAG 2.1", "Heuristics", "Annotated Screens", "Wireframes", "Report"],
     heroColor: "from-sky-100 to-white",
     image: "/Portfolio/Audit.png",
     details: {
       overview:
-        "CMPA is a hub for magazine, books, and digital resources. The audit ensured the site is welcoming and usable for all visitors.",
+        "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
         "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and friction for first-time users.",
+      image: "/Portfolio/Audit.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
         "WCAG 2.1 review with annotated screenshots",
@@ -61,13 +62,14 @@ const projects = [
         "Simplify checkout steps and labels",
         "Repair/add alt text, improve layout for readability",
       ],
+      image: "/Portfolio/Audit.png",
       impact: [
         "Actionable Phase-1 roadmap toward WCAG 2.1 AA",
         "Reduced friction in checkout",
         "Clear baseline for future redesign",
       ],
       reflection:
-        "Combining WCAG + heuristics with visual annotations accelerated decisions.",
+        "Combining WCAG + heuristics with visual annotations and wireframes solutions allowed for a realistic guide for how to improve the accessibility of main website.",
     },
   },
   {
