@@ -734,10 +734,10 @@ export default function App() {
           <div>
             <h3 className="text-lg font-semibold text-slate-900">About</h3>
             <p className="mt-3 text-slate-600 text-sm leading-relaxed">
-              I’m Esther Ramcharan, an Interaction Design student at Sheridan.
-              My internship focused on accessibility audits, ticket workflows,
-              and app UX improvements for Renew and CMPA. I balance research,
-              documentation, and visual design to create accessible, thoughtful experiences.
+             As an Interaction Designer, my core philosophy is grounded in the belief that design has the power to transform user experiences and address real-world challenges. I consider users as the heartbeat of the design process and prioritize their needs and preferences. My commitment lies in crafting digital experiences that are not only intuitive and accessible but also visually engaging.
+          In my design approach, I emphasize user research, wireframing, and prototyping as essential tools to create solutions that resonate with the end user. I believe that design should be a force for positive change in people's lives.
+          Through my journey in UX, I have come to appreciate that collaboration and continuous learning are the cornerstones of successful design. I find inspiration from interactions with experienced professionals and my professors, who are active in the design community.
+          In this ever-evolving field, my goal as an Interaction Designer is to push the boundaries of design, seeking innovative solutions and making a meaningful impact on the lives of those who interact with my work. I am excited about the endless possibilities in this field and look forward to connecting with fellow professionals who share this passion for design excellence.
             </p>
           </div>
           <div id="contact">
