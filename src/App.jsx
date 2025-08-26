@@ -385,7 +385,7 @@ const schoolProjects = [
     year: "2024",
     tags: ["Data Transparency", "Dark Patterns", "Privacy UX", "Prototype"],
     heroColor: "from-cyan-100 to-white",
-    image: "https://placehold.co/800x480?text=Vimeo+Transparency",
+    image: "Data.png",
     summary:
       "The digital service I selected for my project was Vimeo. This choice was driven by my research into data transparency issues among various online services. Among the platforms I explored, Vimeo stood out as the only service that exhibited a significant dark pattern related to data transparency. Unlike other websites and applications I investigated, obtaining information about privacy and data collection on Vimeo was a challenging task. In contrast to the user-friendly approaches of other platforms, Vimeo's privacy details were conspicuously absent from the privacy section. Instead, they were hidden under the legal tab, located at the very bottom of the homepage, with the text appearing in a less prominent, grayed-out font. This discovery highlighted a substantial ethical concern, making Vimeo an ideal candidate for addressing the need to create a more user-friendly system for identifying and controlling, to a reasonable extent, the information collected and how it is utilized.",
     details: {
@@ -406,10 +406,9 @@ const schoolProjects = [
         "Contextual learn-more links; consistent, high-contrast labels",
       ],
       // PLACEHOLDERS — swap with filenames in /public (e.g., "VimeoProblem.png")
-      problemImage: "https://placehold.co/1200x700?text=Vimeo+Problem",
+      problemImage: "Missing.png",
       solutionImages: [
-        "https://placehold.co/1200x700?text=Vimeo+Solution+1",
-        "https://placehold.co/1200x700?text=Vimeo+Solution+2",
+        "Pop.png",
       ],
       impact: [
         "Greater transparency via clearer IA and labeling",
