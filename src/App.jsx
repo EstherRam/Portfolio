@@ -184,8 +184,6 @@ const projects = [
         "Status confirmation and next steps",
       ],
       // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Subscription+Problem",
       solutionImages: [
         "https://placehold.co/1200x700?text=Subscription+Solution+1",
         "https://placehold.co/1200x700?text=Subscription+Solution+2",
