@@ -205,7 +205,7 @@ const projects = [
     year: "2025",
     tags: ["Tickets", "Annotations", "Dev Handoff"],
     heroColor: "from-red-100 to-white",
-    image: "https://placehold.co/800x480?text=Tickets+%26+Annotations",
+    image: "/Portfolio/Tickets.png",
     details: {
       overview:
         "Tickets bridged UX findings and implementation with evidence and clarity.",
