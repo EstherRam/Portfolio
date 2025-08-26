@@ -163,7 +163,7 @@ const projects = [
     year: "2025",
     tags: ["Wireframes", "Interaction Design", "Filtering"],
     heroColor: "from-green-100 to-white",
-    image: "/Portfolio/S/B.png",
+    image: "/Portfolio/S:B.png",
     details: {
       overview:
         "Discovery felt disconnected; browse and search lived in separate patterns.",
