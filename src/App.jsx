@@ -181,10 +181,10 @@ const projects = [
       ],
       // PLACEHOLDERS
       problemImage:
-        "https://placehold.co/1200x700?text=Browse+%26+Search+Problem",
+        "Search.png",
       solutionImages: [
-        "https://placehold.co/1200x700?text=Browse+%26+Search+Solution+1",
-        "https://placehold.co/1200x700?text=Browse+%26+Search+Solution+2",
+        "1.png",
+        "2.png",
       ],
       impact: [
         "Faster, clearer discovery",
