@@ -28,7 +28,7 @@ const srcOf = (p) => {
   return base + cleaned;
 };
 
-// Normalize to exactly 1 problem image
+// Normalize to exactly 1 problem image (falls back to card image if missing)
 const getProblemImage = (proj) => {
   const d = proj?.details || {};
   return d.problemImage || d.problemImg || proj?.image || "";
@@ -44,7 +44,7 @@ const getSolutionImages = (proj) => {
   if (d.solutionImage2) out.push(d.solutionImage2);
   if (d.roadmapImage) out.push(d.roadmapImage);
 
-  // Fallbacks to card image so there are always two
+  // Fallbacks ensure there are always two
   const fallback = proj?.image ? [proj.image, proj.image] : [];
   const uniq = [...new Set(out.filter(Boolean))];
   const two = [...uniq, ...fallback].slice(0, 2);
@@ -92,7 +92,7 @@ const projects = [
         "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
         "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and friction for first-time users.",
-      // REAL images already exist for this one; kept as-is:
+      // REAL images for this one:
       problemImage: "Audit1.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
@@ -141,7 +141,7 @@ const projects = [
         "Fallback: hymn book challenge",
         "Exception: manual email verification",
       ],
-      // PLACEHOLDERS — swap these strings for real filenames in /public
+      // PLACEHOLDERS
       problemImage:
         "https://placehold.co/1200x700?text=Verification+Problem",
       solutionImages: [
@@ -158,8 +158,50 @@ const projects = [
     },
   },
   {
-    id: "browse-search",
+    id: "renew-subscription",
     order: 3,
+    title: "Renew — Subscription Flow",
+    summary:
+      "Audit & redesign of subscription journeys to improve clarity and reduce friction in sign-up and tier management.",
+    role: "Product Design",
+    year: "2025",
+    tags: ["User Journeys", "Content Design", "Wireframes"],
+    heroColor: "from-pink-100 to-white",
+    image: "https://placehold.co/800x480?text=Subscription+Flow",
+    details: {
+      overview:
+        "Mapped current journeys and simplified language, steps, and feedback states.",
+      problem:
+        "Ambiguous steps and labels increased drop-off in sign-up and tier changes.",
+      process: [
+        "Journey mapping + copy audit",
+        "Competitor patterns review",
+        "Mid-fi wireframes and states",
+      ],
+      solution: [
+        "Clearer plan naming + benefits",
+        "Reduced steps; inline validation",
+        "Status confirmation and next steps",
+      ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Subscription+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Subscription+Solution+1",
+        "https://placehold.co/1200x700?text=Subscription+Solution+2",
+      ],
+      impact: [
+        "Lower cognitive load",
+        "Higher completion likelihood",
+        "Fewer support questions",
+      ],
+      reflection:
+        "Microcopy and fewer choices often outperform big UI shifts.",
+    },
+  },
+  {
+    id: "browse-search",
+    order: 4,
     title: "Browse & Search Redesign",
     summary:
       "Dual-mode toggle for discovery with persistent filters, faster search, and streamlined browsing.",
@@ -200,8 +242,60 @@ const projects = [
     },
   },
   {
+    id: "media-player",
+    order: 5,
+    title: "Placeholder",
+    summary: "Placeholder.",
+    role: "UX/UI Design",
+    year: "2025",
+    tags: ["Player UI", "Wireframes", "Usability Fixes"],
+    heroColor: "from-yellow-100 to-white",
+    image: "https://placehold.co/800x480?text=Media+Player",
+    details: {
+      overview: "placeholder.",
+      problem: "placeholder.",
+      process: ["placeholder", "placeholder", "placeholder"],
+      solution: ["placeholder", "placeholder", "placeholder"],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Media+Player+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Media+Player+Solution+1",
+        "https://placehold.co/1200x700?text=Media+Player+Solution+2",
+      ],
+      impact: ["placeholder", "placeholder", "placeholder"],
+      reflection: "placeholder",
+    },
+  },
+  {
+    id: "mobile-web",
+    order: 6,
+    title: "Placeholder",
+    summary: "Placeholder",
+    role: "Interaction Design",
+    year: "2025",
+    tags: ["placeholder", "placeholder", "placeholder"],
+    heroColor: "from-purple-100 to-white",
+    image: "https://placehold.co/800x480?text=Mobile+to+Web",
+    details: {
+      overview: "placeholder.",
+      problem: "placeholder.",
+      process: ["placeholder", "placeholder", "placeholder"],
+      solution: ["placeholder", "placeholder", "placeholder"],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Mobile+to+Web+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Mobile+to+Web+Solution+1",
+        "https://placehold.co/1200x700?text=Mobile+to+Web+Solution+2",
+      ],
+      impact: ["placeholder", "placeholder", "placeholder"],
+      reflection: "placeholder",
+    },
+  },
+  {
     id: "ticket-system",
-    order: 4,
+    order: 7,
     title: "Service Ticket System UX",
     summary:
       "Created/maintained 30+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
@@ -282,43 +376,51 @@ const schoolProjects = [
         "Chunking information and anxiety-aware copy improved confidence.",
     },
   },
+
+  /* ====== NEW #2: VIMEO DATA TRANSPARENCY ====== */
   {
-    id: "sp-mealplanner",
-    title: "Campus Meal Planner",
+    id: "sp-vimeo-transparency",
+    title: "Vimeo Data Transparency Prototype",
     role: "Coursework — Service/UX",
     year: "2024",
-    tags: ["Flows", "Content Design", "Prototyping"],
+    tags: ["Data Transparency", "Dark Patterns", "Privacy UX", "Prototype"],
+    heroColor: "from-cyan-100 to-white",
+    image: "https://placehold.co/800x480?text=Vimeo+Transparency",
     summary:
-      "Weekly planner balancing cost, nutrition, and cafeteria stock to cut waste and choice fatigue.",
-    heroColor: "from-lime-100 to-white",
-    image: "https://placehold.co/800x480?text=Meal+Planner",
+      "The digital service I selected for my project was Vimeo. This choice was driven by my research into data transparency issues among various online services. Among the platforms I explored, Vimeo stood out as the only service that exhibited a significant dark pattern related to data transparency. Unlike other websites and applications I investigated, obtaining information about privacy and data collection on Vimeo was a challenging task. In contrast to the user-friendly approaches of other platforms, Vimeo's privacy details were conspicuously absent from the privacy section. Instead, they were hidden under the legal tab, located at the very bottom of the homepage, with the text appearing in a less prominent, grayed-out font. This discovery highlighted a substantial ethical concern, making Vimeo an ideal candidate for addressing the need to create a more user-friendly system for identifying and controlling, to a reasonable extent, the information collected and how it is utilized.",
     details: {
       overview:
-        "Helps students plan affordable meals using real cafeteria menus and stock.",
+        "A prototype to reduce dark patterns in Vimeo’s privacy UX by surfacing plain-language disclosures and task-based controls for data collection and sharing.",
       problem:
-        "Over-spend + repetitive choices; staff struggled with forecasting.",
+        "Key privacy and data-collection details are hard to find—hidden under a footer ‘Legal’ tab with low-contrast text—creating a data-transparency dark pattern.",
       process: [
-        "1-week diary study on constraints",
-        "‘Plan in 2 minutes’ flow",
-        "Mid-fi prototype with copy-first content",
+        "POEMS analysis (People, Objects, Environments, Messages, Services) of Vimeo’s data touchpoints",
+        "Five Human Factors framing (physical, cognitive, social, cultural, emotional) and sentiment scan",
+        "Competitive/heuristic review of transparency patterns",
+        "Wireframing from low → mid → high fidelity for clearer IA and data-preference flows",
       ],
       solution: [
-        "One-tap weekly template + smart swaps",
-        "Budget/nutrition badges at list level",
-        "Out-of-stock warnings from staff inputs",
+        "Move core privacy info from Legal → visible Privacy in main settings + footer",
+        "Add a 'Data Collection Preferences' panel with view/change/delete options",
+        "Inline consent after sign-up/login with plain-language 'we collect / we share' summaries",
+        "Contextual learn-more links; consistent, high-contrast labels",
       ],
-      // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Meal+Planner+Problem",
+      // PLACEHOLDERS — swap with filenames in /public (e.g., "VimeoProblem.png")
+      problemImage: "https://placehold.co/1200x700?text=Vimeo+Problem",
       solutionImages: [
-        "https://placehold.co/1200x700?text=Meal+Planner+Solution+1",
-        "https://placehold.co/1200x700?text=Meal+Planner+Solution+2",
+        "https://placehold.co/1200x700?text=Vimeo+Solution+1",
+        "https://placehold.co/1200x700?text=Vimeo+Solution+2",
       ],
-      impact: ["84% planned in <3 min", "Predicted 6–10% waste reduction"],
+      impact: [
+        "Greater transparency via clearer IA and labeling",
+        "Lower effort to discover and adjust data preferences",
+        "Ethically improved flows that avoid dark-pattern placement",
+      ],
       reflection:
-        "Defaults + badges often shift behavior more than heavy analytics.",
+        "Shifting privacy from hidden legalese to visible, task-based controls builds trust and user autonomy.",
     },
   },
+
   {
     id: "sp-museumkiosk",
     title: "Museum Kiosk Redesign",
@@ -368,7 +470,7 @@ export default function App() {
     orderedIntern.find((p) => p.id === openId) ||
     schoolProjects.find((p) => p.id === openId);
 
-  // Helpers for the currently open project
+  // Compute normalized image sources for the modal (safe even if openProject is null)
   const problemSrc = srcOf(getProblemImage(openProject));
   const solutionSrcs = getSolutionImages(openProject).map(srcOf);
 
@@ -416,7 +518,7 @@ export default function App() {
             title="Internship Case Studies"
             subtitle="Process over pixels. Each study shows problem framing, artifacts, and impact from my 2025 internship."
           />
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
+        <div className="mt-8 grid md:grid-cols-3 gap-6">
             {orderedIntern.map((p) => (
               <article
                 key={p.id}
@@ -664,6 +766,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
