@@ -45,7 +45,7 @@ const projects = [
     year: "2025",
     tags: ["WCAG 2.1", "Heuristics", "Annotated Screens", "Report"],
     heroColor: "from-sky-100 to-white",
-    image: "/Audit.png",
+    image: "/Portfolio/",
     details: {
       overview:
         "CMPA is a hub for magazine, books, and digital resources. The audit ensured the site is welcoming and usable for all visitors.",
