@@ -88,7 +88,8 @@ const projects = [
         "Simplify checkout steps and labels",
         "Repair/add alt text, improve layout for readability",
       ],
-      solutionImage: "Solution.png", "Roadmap.png",
+      solutionImage: "Solution.png",
+      roadmapImage: "Roadmap.png",
       impact: [
         "Actionable Phase-1 roadmap toward WCAG 2.1 AA",
         "Reduced friction in checkout",
