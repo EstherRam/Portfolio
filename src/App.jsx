@@ -92,7 +92,6 @@ const projects = [
         "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
         "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and friction for first-time users.",
-      // REAL images for this one:
       problemImage: "Audit1.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
@@ -104,7 +103,6 @@ const projects = [
         "Simplify checkout steps and labels",
         "Repair/add alt text, improve layout for readability",
       ],
-      // Two solution images:
       solutionImages: ["Solution.png", "Roadmap.png"],
       impact: [
         "Actionable Phase-1 roadmap toward WCAG 2.1 AA",
@@ -140,10 +138,8 @@ const projects = [
         "Primary: referral link",
         "Fallback: hymn book challenge",
         "Exception: manual email verification",
+        "Delete path to ensure app abides by Apple and Google Play Guidlines",
       ],
-      // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Verification+Problem",
       solutionImages: [
         "Verify.png",
         "Delete.png",
@@ -690,8 +686,8 @@ export default function App() {
                   </div>
                 )}
 
-              {/* Solution images (2) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {/* Solution images (stacked vertically) */}
+              <div className="grid grid-cols-1 gap-3">
                 {solutionSrcs.map((src, i) => (
                   <img
                     key={i}
@@ -763,6 +759,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
