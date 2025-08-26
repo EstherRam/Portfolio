@@ -249,7 +249,7 @@ const schoolProjects = [
     year: "2023",
     tags: ["Information Visualization", "Diary Study", "Emotional Journey", "Iteration"],
     heroColor: "from-violet-100 to-white",
-    image: "https://placehold.co/800x480?text=Visualize+an+Experience",
+    image: "/Portfolio/DP.png",
     summary:
       "A visual narrative of a leg-day gym routine, mapping events → thoughts → feelings → outcomes from wake-up through the workday. Raw notes were structured into a Thought Log, then iteratively designed into a clear, hierarchical visualization.",
     details: {
@@ -268,10 +268,9 @@ const schoolProjects = [
         "Event • Thought • Feeling • Result groupings linked by subtle graph lines/footprints to show the journey",
         "Refined iconography and restrained color so meaning reads first, style second"
       ],
-      problemImage: "https://placehold.co/1200x700?text=Visualize+Experience+Problem",
+      problemImage: "No.png",
       solutionImages: [
         "Visual.png",
-        "https://placehold.co/1200x700?text=Visualize+Experience+Solution+2"
       ],
       impact: [
         "Cleaner hierarchy makes it easy to scan how thoughts and feelings evolve across the routine",
