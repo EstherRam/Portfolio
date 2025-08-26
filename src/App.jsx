@@ -154,48 +154,8 @@ const projects = [
     },
   },
   {
-    id: "renew-subscription",
-    order: 3,
-    title: "Renew — Subscription Flow",
-    summary:
-      "Audit & redesign of subscription journeys to improve clarity and reduce friction in sign-up and tier management.",
-    role: "Product Design",
-    year: "2025",
-    tags: ["User Journeys", "Content Design", "Wireframes"],
-    heroColor: "from-pink-100 to-white",
-    image: "https://placehold.co/800x480?text=Subscription+Flow",
-    details: {
-      overview:
-        "Mapped current journeys and simplified language, steps, and feedback states.",
-      problem:
-        "Ambiguous steps and labels increased drop-off in sign-up and tier changes.",
-      process: [
-        "Journey mapping + copy audit",
-        "Competitor patterns review",
-        "Mid-fi wireframes and states",
-      ],
-      solution: [
-        "Clearer plan naming + benefits",
-        "Reduced steps; inline validation",
-        "Status confirmation and next steps",
-      ],
-      // PLACEHOLDERS
-      solutionImages: [
-        "https://placehold.co/1200x700?text=Subscription+Solution+1",
-        "https://placehold.co/1200x700?text=Subscription+Solution+2",
-      ],
-      impact: [
-        "Lower cognitive load",
-        "Higher completion likelihood",
-        "Fewer support questions",
-      ],
-      reflection:
-        "Microcopy and fewer choices often outperform big UI shifts.",
-    },
-  },
-  {
     id: "browse-search",
-    order: 4,
+    order: 3,
     title: "Browse & Search Redesign",
     summary:
       "Dual-mode toggle for discovery with persistent filters, faster search, and streamlined browsing.",
@@ -236,60 +196,8 @@ const projects = [
     },
   },
   {
-    id: "media-player",
-    order: 5,
-    title: "Placeholder",
-    summary: "Placeholder.",
-    role: "UX/UI Design",
-    year: "2025",
-    tags: ["Player UI", "Wireframes", "Usability Fixes"],
-    heroColor: "from-yellow-100 to-white",
-    image: "https://placehold.co/800x480?text=Media+Player",
-    details: {
-      overview: "placeholder.",
-      problem: "placeholder.",
-      process: ["placeholder", "placeholder", "placeholder"],
-      solution: ["placeholder", "placeholder", "placeholder"],
-      // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Media+Player+Problem",
-      solutionImages: [
-        "https://placehold.co/1200x700?text=Media+Player+Solution+1",
-        "https://placehold.co/1200x700?text=Media+Player+Solution+2",
-      ],
-      impact: ["placeholder", "placeholder", "placeholder"],
-      reflection: "placeholder",
-    },
-  },
-  {
-    id: "mobile-web",
-    order: 6,
-    title: "Placeholder",
-    summary: "Placeholder",
-    role: "Interaction Design",
-    year: "2025",
-    tags: ["placeholder", "placeholder", "placeholder"],
-    heroColor: "from-purple-100 to-white",
-    image: "https://placehold.co/800x480?text=Mobile+to+Web",
-    details: {
-      overview: "placeholder.",
-      problem: "placeholder.",
-      process: ["placeholder", "placeholder", "placeholder"],
-      solution: ["placeholder", "placeholder", "placeholder"],
-      // PLACEHOLDERS
-      problemImage:
-        "https://placehold.co/1200x700?text=Mobile+to+Web+Problem",
-      solutionImages: [
-        "https://placehold.co/1200x700?text=Mobile+to+Web+Solution+1",
-        "https://placehold.co/1200x700?text=Mobile+to+Web+Solution+2",
-      ],
-      impact: ["placeholder", "placeholder", "placeholder"],
-      reflection: "placeholder",
-    },
-  },
-  {
     id: "ticket-system",
-    order: 7,
+    order: 4,
     title: "Service Ticket System UX",
     summary:
       "Created/maintained 30+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
