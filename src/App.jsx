@@ -125,7 +125,7 @@ const projects = [
     year: "2025",
     tags: ["Onboarding", "Security vs UX", "Flows", "Wireframes"],
     heroColor: "from-indigo-100 to-white",
-    image: "/Portfolio/Verify.png",
+    image: "/Portfolio/Renew.png",
     details: {
       overview:
         "Designed a verification approach that protects content while keeping onboarding welcoming.",
@@ -145,8 +145,8 @@ const projects = [
       problemImage:
         "https://placehold.co/1200x700?text=Verification+Problem",
       solutionImages: [
-        "https://placehold.co/1200x700?text=Verification+Solution+1",
-        "https://placehold.co/1200x700?text=Verification+Solution+2",
+        "Verify.png",
+        "Delete.png",
       ],
       impact: [
         "Resolved debates on strict vs open",
