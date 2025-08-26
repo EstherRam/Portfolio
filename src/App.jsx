@@ -10,30 +10,45 @@
 
 import React, { useState } from "react";
 
-/* ---------- PATH HELPER (minimal addition) ---------- */
+/* ---------- PATH + IMAGE HELPERS (small, robust) ---------- */
 // Resolves images from /public for both local dev ("/") and GitHub Pages ("/<repo>/").
-// Works with "Audit.png", "/Audit.png", and "/Portfolio/Audit.png".
+// Works with "Audit.png", "/Audit.png", and "/<repo>/Audit.png".
 const srcOf = (p) => {
   if (!p) return "";
   if (/^https?:\/\//i.test(p)) return p; // external URL
-
-  const base = import.meta.env.BASE_URL || "/";     // "/" locally, "/Portfolio/" on GH Pages
-  const seg  = base.replace(/^\/|\/$/g, "");        // e.g., "Portfolio" or ""
-
-  // Clean leading slashes
-  let cleaned = String(p).replace(/^\/+/, "");
-
-  // If p already includes the current base segment, strip it (prevents double "/Portfolio/")
+  const base = import.meta.env.BASE_URL || "/"; // "/" locally, "/<repo>/" on GH Pages
+  const seg = base.replace(/^\/|\/$/g, "");     // "repo" or ""
+  let cleaned = String(p).replace(/^\/+/, "");  // drop leading "/"
   if (seg && cleaned.toLowerCase().startsWith(seg.toLowerCase() + "/")) {
-    cleaned = cleaned.slice(seg.length + 1);
+    cleaned = cleaned.slice(seg.length + 1);    // avoid double /repo/
   }
-
-  // If running locally (seg === "") but the data hard-coded "Portfolio/", strip it
   if (!seg && cleaned.toLowerCase().startsWith("portfolio/")) {
-    cleaned = cleaned.slice("portfolio/".length);
+    cleaned = cleaned.slice("portfolio/".length); // tolerate "/Portfolio/..."
   }
-
   return base + cleaned;
+};
+
+// Normalize to exactly 1 problem image
+const getProblemImage = (proj) => {
+  const d = proj?.details || {};
+  return d.problemImage || d.problemImg || proj?.image || "";
+};
+
+// Normalize to exactly 2 solution images (collect from multiple possible fields)
+const getSolutionImages = (proj) => {
+  const d = proj?.details || {};
+  const out = [];
+
+  if (Array.isArray(d.solutionImages)) out.push(...d.solutionImages);
+  if (d.solutionImage) out.push(d.solutionImage);
+  if (d.solutionImage2) out.push(d.solutionImage2);
+  if (d.roadmapImage) out.push(d.roadmapImage);
+
+  // Fallbacks to card image so there are always two
+  const fallback = proj?.image ? [proj.image, proj.image] : [];
+  const uniq = [...new Set(out.filter(Boolean))];
+  const two = [...uniq, ...fallback].slice(0, 2);
+  return two;
 };
 
 /* ---------- UI helpers ---------- */
@@ -77,6 +92,7 @@ const projects = [
         "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
         "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and friction for first-time users.",
+      // REAL images already exist for this one; kept as-is:
       problemImage: "Audit1.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
@@ -88,8 +104,8 @@ const projects = [
         "Simplify checkout steps and labels",
         "Repair/add alt text, improve layout for readability",
       ],
-      solutionImage: "Solution.png",
-      roadmapImage: "Roadmap.png",
+      // Two solution images:
+      solutionImages: ["Solution.png", "Roadmap.png"],
       impact: [
         "Actionable Phase-1 roadmap toward WCAG 2.1 AA",
         "Reduced friction in checkout",
@@ -124,6 +140,13 @@ const projects = [
         "Primary: referral link",
         "Fallback: hymn book challenge",
         "Exception: manual email verification",
+      ],
+      // PLACEHOLDERS — swap these strings for real filenames in /public
+      problemImage:
+        "https://placehold.co/1200x700?text=Verification+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Verification+Solution+1",
+        "https://placehold.co/1200x700?text=Verification+Solution+2",
       ],
       impact: [
         "Resolved debates on strict vs open",
@@ -160,6 +183,13 @@ const projects = [
         "Reduced steps; inline validation",
         "Status confirmation and next steps",
       ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Subscription+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Subscription+Solution+1",
+        "https://placehold.co/1200x700?text=Subscription+Solution+2",
+      ],
       impact: [
         "Lower cognitive load",
         "Higher completion likelihood",
@@ -195,6 +225,13 @@ const projects = [
         "Persistent filters per mode",
         "Always-visible search in Search mode",
       ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Browse+%26+Search+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Browse+%26+Search+Solution+1",
+        "https://placehold.co/1200x700?text=Browse+%26+Search+Solution+2",
+      ],
       impact: [
         "Faster, clearer discovery",
         "Consistent filter mental model",
@@ -219,6 +256,13 @@ const projects = [
       problem: "placeholder.",
       process: ["placeholder", "placeholder", "placeholder"],
       solution: ["placeholder", "placeholder", "placeholder"],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Media+Player+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Media+Player+Solution+1",
+        "https://placehold.co/1200x700?text=Media+Player+Solution+2",
+      ],
       impact: ["placeholder", "placeholder", "placeholder"],
       reflection: "placeholder",
     },
@@ -238,6 +282,13 @@ const projects = [
       problem: "placeholder.",
       process: ["placeholder", "placeholder", "placeholder"],
       solution: ["placeholder", "placeholder", "placeholder"],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Mobile+to+Web+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Mobile+to+Web+Solution+1",
+        "https://placehold.co/1200x700?text=Mobile+to+Web+Solution+2",
+      ],
       impact: ["placeholder", "placeholder", "placeholder"],
       reflection: "placeholder",
     },
@@ -267,6 +318,13 @@ const projects = [
         "Issue template enforcing clarity",
         "Visual evidence + expected behaviors",
         "Consolidated backlog",
+      ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Ticket+System+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Ticket+System+Solution+1",
+        "https://placehold.co/1200x700?text=Ticket+System+Solution+2",
       ],
       impact: [
         "Reduced ambiguity and duplication",
@@ -306,6 +364,13 @@ const schoolProjects = [
         "Accessible routes toggle + contrast checks",
         "Context chips (restrooms, elevators, help desks)",
       ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Wayfinding+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Wayfinding+Solution+1",
+        "https://placehold.co/1200x700?text=Wayfinding+Solution+2",
+      ],
       impact: ["Task success +27%", "Time-on-task −18%"],
       reflection:
         "Chunking information and anxiety-aware copy improved confidence.",
@@ -335,6 +400,13 @@ const schoolProjects = [
         "One-tap weekly template + smart swaps",
         "Budget/nutrition badges at list level",
         "Out-of-stock warnings from staff inputs",
+      ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Meal+Planner+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Meal+Planner+Solution+1",
+        "https://placehold.co/1200x700?text=Meal+Planner+Solution+2",
       ],
       impact: ["84% planned in <3 min", "Predicted 6–10% waste reduction"],
       reflection:
@@ -366,6 +438,13 @@ const schoolProjects = [
         "Persistent ‘Back to Exhibit’ affordance",
         "Narrative browse (People • Places • Objects)",
       ],
+      // PLACEHOLDERS
+      problemImage:
+        "https://placehold.co/1200x700?text=Museum+Kiosk+Problem",
+      solutionImages: [
+        "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+1",
+        "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+2",
+      ],
       impact: ["Error taps −41%", "Clearer exits; dwell time ↑"],
       reflection:
         "Accessibility basics + narrative framing = friendlier public UX.",
@@ -382,6 +461,10 @@ export default function App() {
   const openProject =
     orderedIntern.find((p) => p.id === openId) ||
     schoolProjects.find((p) => p.id === openId);
+
+  // Helpers for the currently open project
+  const problemSrc = srcOf(getProblemImage(openProject));
+  const solutionSrcs = getSolutionImages(openProject).map(srcOf);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-800">
@@ -568,15 +651,15 @@ export default function App() {
                   <p>{openProject.details.problem}</p>
                 </div>
               )}
-              {openProject.details?.problemImage && (
-                <div>
-                  <img
-                    src={srcOf(openProject.details.problemImage)}
-                    alt="Problem illustration"
-                    className="w-full rounded-lg border border-slate-200"
-                  />
-                </div>
-              )}
+
+              {/* Problem image (1) */}
+              <div>
+                <img
+                  src={problemSrc}
+                  alt="Problem illustration"
+                  className="w-full rounded-lg border border-slate-200"
+                />
+              </div>
 
               {Array.isArray(openProject.details?.process) &&
                 openProject.details.process.length > 0 && (
@@ -602,15 +685,17 @@ export default function App() {
                   </div>
                 )}
 
-              {openProject.details?.solutionImage && (
-                <div>
+              {/* Solution images (2) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {solutionSrcs.map((src, i) => (
                   <img
-                    src={srcOf(openProject.details.solutionImage)}
-                    alt="Solution illustration"
+                    key={i}
+                    src={src}
+                    alt={`Solution illustration ${i + 1}`}
                     className="w-full rounded-lg border border-slate-200"
                   />
-                </div>
-              )}
+                ))}
+              </div>
 
               {Array.isArray(openProject.details?.impact) &&
                 openProject.details.impact.length > 0 && (
@@ -673,5 +758,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
