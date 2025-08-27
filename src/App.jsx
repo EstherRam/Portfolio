@@ -53,12 +53,13 @@ const getSolutionImages = (proj) => {
   return two;
 };
 
-// Optional: up to 2 process images under the Process list
 const getProcessImages = (proj) => {
   const d = proj?.details || {};
   const arr = Array.isArray(d.processImages) ? d.processImages.filter(Boolean) : [];
-  return arr.slice(0, 2);
+  const cap = proj?.id === "sp-documentary" ? 3 : 2; // ⬅ only last project gets 3
+  return arr.slice(0, cap);
 };
+
 
 /* ---------- UI helpers ---------- */
 const Tag = ({ children }) => (
@@ -336,7 +337,7 @@ const schoolProjects = [
         "Storyboard & style frames",
         "Capture, edit, color, and sound polish"
       ],
-      processImages: ["StoryB.png", "Style.png"],
+      processImages: ["StoryB.png", "Style.png", "Video.png"],
       solution: [
         "Final deliverable: edited short documentary (video)."
       ],
