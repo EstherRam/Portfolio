@@ -10,9 +10,6 @@
 
 import React, { useState } from "react";
 
-/* ---------- PATH + IMAGE HELPERS (small, robust) ---------- */
-// Resolves images from /public for both local dev ("/") and GitHub Pages ("/<repo>/").
-// Works with "Audit.png", "/Audit.png", and "/<repo>/Audit.png".
 const srcOf = (p) => {
   if (!p) return "";
   if (/^https?:\/\//i.test(p)) return p; // external URL
@@ -28,7 +25,6 @@ const srcOf = (p) => {
   return base + cleaned;
 };
 
-// Normalize to exactly 1 problem image (falls back to card image if allowed)
 const getProblemImage = (proj) => {
   const d = proj?.details || {};
   // If the project explicitly opts out of problem image (e.g., to show Purpose instead), return empty
@@ -36,7 +32,6 @@ const getProblemImage = (proj) => {
   return d.problemImage || d.problemImg || proj?.image || "";
 };
 
-// Normalize to exactly 2 solution images (collect from multiple possible fields)
 const getSolutionImages = (proj) => {
   const d = proj?.details || {};
   const out = [];
@@ -60,10 +55,8 @@ const getProcessImages = (proj) => {
   return arr.slice(0, cap);
 };
 
-/* ---------- RESUME (PDF in /public) ---------- */
 const RESUME_FILE = "Esther_Ramcharan_Resume_2025.pdf";
 
-/* ---------- UI helpers ---------- */
 const Tag = ({ children }) => (
   <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium text-slate-700 border-slate-200 bg-white/70">
     {children}
@@ -86,7 +79,7 @@ const SectionTitle = ({ kicker, title, subtitle }) => (
   </div>
 );
 
-/* ---------- Internship case studies (7) ---------- */
+/* ---------- Internship case studies (4) ---------- */
 const projects = [
   {
     id: "cmpa-audit",
@@ -103,7 +96,7 @@ const projects = [
       overview:
         "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
-        "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and friction for first-time users.",
+        "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and lack of onboarding and overall friction for first-time users.",
       problemImage: "Audit1.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
@@ -117,7 +110,7 @@ const projects = [
       ],
       solutionImages: ["Solution.png", "Roadmap.png"],
       impact: [
-        "Actionable Phase-1 roadmap toward WCAG 2.1 AA",
+        "Actionable Phase-1 roadmap toward WCAG 2.1 Compliance",
         "Reduced friction in checkout",
         "Clear baseline for future redesign",
       ],
@@ -175,11 +168,11 @@ const projects = [
     image: "/Portfolio/S:B.png",
     details: {
       overview:
-        "Discovery felt disconnected; browse and search lived in separate patterns.",
+        "Discovery felt disconnected and was incomplete; browse and search lived in separate patterns.",
       problem:
-        "No smooth transition between modes, filters reset, unclear active state.",
+        "No smooth transition between modes, filters reset, unclear active state, and disatisfied stakeholder.",
       process: [
-        "Synthesis of pain points",
+        "Assessments of pain points and outline doc of expectations provided by stakeholders",
         "Dual-mode concept sketches",
         "Mid-fi wireframes + annotations",
       ],
@@ -196,7 +189,7 @@ const projects = [
         "Adopted as a core feature",
       ],
       reflection:
-        "Mode persistence prevents users feeling they ‘start over’.",
+        "Mode persistence prevents users feeling they ‘start over and a small toggle design change simplifies discovery’.",
     },
   },
   {
@@ -214,7 +207,7 @@ const projects = [
       overview:
         "Tickets bridged UX findings and implementation with evidence and clarity.",
       problem:
-        "Vague/duplicative tickets without visuals slowed dev velocity.",
+        "Vague/duplicated tickets without visuals slowed dev progress.",
       process: [
         "Systematic testing + captures",
         "Structured issues with labels/platform notes",
@@ -249,7 +242,7 @@ const schoolProjects = [
     heroColor: "from-violet-100 to-white",
     image: "/Portfolio/DP.png",
     summary:
-      "A visual narrative of a leg-day gym routine, mapping events → thoughts → feelings → outcomes from wake-up through the workday. Raw notes were structured into a Thought Log, then iteratively designed into a clear, hierarchical visualization.",
+      "A visual narrative of a leg-day gym routine, mapping events → thoughts → feelings → outcomes from wake-up through the workday. Raw notes were structured into a Thought Log, then iteratively designed into a clear visualization, with heirarchy.",
     details: {
       overview:
         "Captured a real routine (alarm → gym → work) and transformed it into a visual story that conveys mental, emotional, and physical states over time, using structured logs and iterative design to clarify hierarchy and flow.",
@@ -258,7 +251,8 @@ const schoolProjects = [
       process: [
         "Field notes on Samsung Notes during the journey (events, thoughts, feelings, outcomes)",
         "Transcribed into a structured Thought Log (framework inspired by TherapistAid) for deeper analysis",
-        "Mapped the E-T-F-O model across the timeline; explored color/emoji/icon encodings",
+        "Used Kevin Lynches method of paths, edges, districts, and notes across the timeline",
+        "Applied roadmapping (how and why) and timelining (what, when, and where)",
         "Multiple iterations to improve hierarchy, legibility, and connective lines showing the ‘train of thought’"
       ],
       solution: [
@@ -290,7 +284,7 @@ const schoolProjects = [
       "Vimeo was selected after finding a data-transparency dark pattern: privacy details are hard to discover—tucked under a low-contrast footer Legal tab—unlike clearer patterns on other services. The project proposes a more user-friendly way to see and control what’s collected and how it’s used.",
     details: {
       overview:
-        "Prototype to replace hidden legalese with plain-language disclosures and a focused preference flow for data collection/sharing.",
+        "Prototype to replace hidden information with easily seen plain-language disclosures and a focused preference flow for data collection/sharing.",
       problem:
         "Key privacy info is not obvious—hidden under a footer ‘Legal’ tab with subdued styling—creating a transparency dark pattern.",
       process: [
@@ -308,11 +302,11 @@ const schoolProjects = [
       solutionImages: ["Pop.png", "Data.png"],   // ensures two images
       impact: [
         "Reduces effort to discover and adjust data preferences",
-        "Clearer IA and labeling increase perceived transparency",
+        "Clearer access and labeling increase perceived transparency",
         "Avoids on-entry interruption in favor of task-aligned timing"
       ],
       reflection:
-        "Positioning consent where users already commit (post-login) respects flow while still foregrounding control."
+        "Positioning consent where users already commit (post-login) respects flow while still highlighting control."
     }
   },
 
@@ -370,11 +364,7 @@ export default function App() {
       <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div
-              className="h-8 w-8 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-500"
-              aria-hidden
-            />
-            <span className="font-semibold">Interaction Design Portfolio</span>
+            <span className="font-semibold">IXD Portfolio</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#work" className="hover:text-sky-700">Internship</a>
@@ -400,8 +390,8 @@ export default function App() {
               Hi, I’m Esther Ramcharan — <span className="text-sky-700">Interaction Design</span> Student
             </h1>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              I design accessible, thoughtful experiences—balancing research, systems thinking, and clear UI.
-              Below is my internship work (1–7) plus selected school projects.
+              I aim to design accessible, thoughtful experiences, balancing research, systems thinking, and clear UI.
+              Below is my internship work (1–4) plus (3) selected school projects.
             </p>
           </div>
         </div>
