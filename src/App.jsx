@@ -258,7 +258,7 @@ const schoolProjects = [
       solution: [
         "Single timeline from alarm to work, with clear typographic hierarchy and sectioning",
         "Event • Thought • Feeling • Result groupings linked by subtle graph lines/footprints to show the journey",
-        "Refined iconography and restrained color so meaning reads first, style second"
+        "Refined iconography and restrained colour so meaning reads first, style second"
       ],
       problemImage: "No.png",
       solutionImages: ["Visual.png"],
@@ -267,7 +267,7 @@ const schoolProjects = [
         "Connective visual devices (lines/footprints) make causal links more apparent at a glance"
       ],
       reflection:
-        "Constraining color and emphasizing structure clarified the emotional arc without visual noise."
+        "Constraining colour and emphasizing structure clarified the emotional arc without visual noise."
     }
   },
 
@@ -331,7 +331,7 @@ const schoolProjects = [
       process: [
         "Story worksheet (context, character, conflict, solution, denouement)",
         "Storyboard & style frames",
-        "Capture, edit, color, and sound polish"
+        "Capture, edit, colour, and sound polish"
       ],
       processImages: ["StoryB.png", "Style.png", "Video.png"],
       solution: [
