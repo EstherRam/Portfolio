@@ -725,19 +725,10 @@ export default function App() {
             <p className="mt-3 text-slate-600 text-sm">
               Email:{" "}
               <a
-                href="mailto:estherramcharan@example.com"
+                href="mailto:ramchaes@sheridancollege.ca"
                 className="text-sky-700 hover:underline"
               >
-                estherramcharan@example.com
-              </a>
-            </p>
-            <p className="text-slate-600 text-sm">
-              Portfolio:{" "}
-              <a
-                href="https://ramchaes.myportfolio.com/work"
-                className="text-sky-700 hover:underline"
-              >
-                ramchaes.myportfolio.com/work
+                ramchaes@sheridancollege.ca
               </a>
             </p>
           </div>
