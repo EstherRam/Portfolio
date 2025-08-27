@@ -60,6 +60,8 @@ const getProcessImages = (proj) => {
   return arr.slice(0, cap);
 };
 
+/* ---------- RESUME (PDF in /public) ---------- */
+const RESUME_FILE = "Esther_Ramcharan_Resume_2025.pdf";
 
 /* ---------- UI helpers ---------- */
 const Tag = ({ children }) => (
@@ -349,6 +351,7 @@ const schoolProjects = [
 /* ---------- Page ---------- */
 export default function App() {
   const [openId, setOpenId] = useState(null);
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   // Lookup across internship + school
   const orderedIntern = [...projects].sort((a, b) => a.order - b.order);
@@ -378,6 +381,13 @@ export default function App() {
             <a href="#school" className="hover:text-sky-700">School</a>
             <a href="#about" className="hover:text-sky-700">About</a>
             <a href="#contact" className="hover:text-sky-700">Contact</a>
+            {/* Resume trigger */}
+            <button
+              onClick={() => setResumeOpen(true)}
+              className="hover:text-sky-700"
+            >
+              Resume
+            </button>
           </nav>
         </div>
       </header>
@@ -576,9 +586,15 @@ export default function App() {
                       ))}
                     </ul>
 
-                    {/* Optional Process images (up to 2) */}
+                    {/* Optional Process images (up to 2; 3 for final project) */}
                     {processSrcs.length > 0 && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                      <div
+                        className={`grid grid-cols-1 ${
+                          openProject?.id === "sp-documentary" && processSrcs.length === 3
+                            ? "md:grid-cols-3"
+                            : "md:grid-cols-2"
+                        } gap-3 mt-3`}
+                      >
                         {processSrcs.map((src, i) => (
                           <img
                             key={i}
@@ -604,82 +620,81 @@ export default function App() {
                   </div>
                 )}
 
-             {/* Solution media (image(s) or video) — vertical stack; video full-width 16:9 */}
-<div className="grid grid-cols-1 gap-3">
-  {(() => {
-    const items = solutionSrcs; // already through srcOf
-    const first = items[0] || "";
-    const isMp4 = /\.mp4(\?.*)?$/i.test(first);
-    const yt = first.match(
-      /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/
-    );
-    const vimeo = first.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-    const drive = first.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+              {/* Solution media (image(s) or video) — vertical stack; video full-width 16:9 */}
+              <div className="grid grid-cols-1 gap-3">
+                {(() => {
+                  const items = solutionSrcs; // already through srcOf
+                  const first = items[0] || "";
+                  const isMp4 = /\.mp4(\?.*)?$/i.test(first);
+                  const yt = first.match(
+                    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/
+                  );
+                  const vimeo = first.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+                  const drive = first.match(/drive\.google\.com\/file\/d\/([^/]+)/);
 
-    // If the first entry is a video link, render ONLY that video — full width, 16:9
-    if (yt) {
-      const id = yt[1];
-      return (
-        <iframe
-          className="w-full rounded-lg border border-slate-200"
-          style={{ aspectRatio: "16 / 9" }}
-          src={`https://www.youtube-nocookie.com/embed/${id}`}
-          title="Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      );
-    }
-    if (vimeo) {
-      const id = vimeo[1];
-      return (
-        <iframe
-          className="w-full rounded-lg border border-slate-200"
-          style={{ aspectRatio: "16 / 9" }}
-          src={`https://player.vimeo.com/video/${id}`}
-          title="Vimeo video"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-        />
-      );
-    }
-    if (drive) {
-      const id = drive[1];
-      return (
-        <iframe
-          className="w-full rounded-lg border border-slate-200"
-          style={{ aspectRatio: "16 / 9" }}
-          src={`https://drive.google.com/file/d/${id}/preview`}
-          title="Drive video"
-          allow="autoplay"
-        />
-      );
-    }
-    if (isMp4) {
-      return (
-        <video
-          controls
-          className="w-full rounded-lg border border-slate-200"
-          style={{ aspectRatio: "16 / 9" }}
-        >
-          <source src={first} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      );
-    }
+                  // If the first entry is a video link, render ONLY that video — full width, 16:9
+                  if (yt) {
+                    const id = yt[1];
+                    return (
+                      <iframe
+                        className="w-full rounded-lg border border-slate-200"
+                        style={{ aspectRatio: "16 / 9" }}
+                        src={`https://www.youtube-nocookie.com/embed/${id}`}
+                        title="Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    );
+                  }
+                  if (vimeo) {
+                    const id = vimeo[1];
+                    return (
+                      <iframe
+                        className="w-full rounded-lg border border-slate-200"
+                        style={{ aspectRatio: "16 / 9" }}
+                        src={`https://player.vimeo.com/video/${id}`}
+                        title="Vimeo video"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                      />
+                    );
+                  }
+                  if (drive) {
+                    const id = drive[1];
+                    return (
+                      <iframe
+                        className="w-full rounded-lg border border-slate-200"
+                        style={{ aspectRatio: "16 / 9" }}
+                        src={`https://drive.google.com/file/d/${id}/preview`}
+                        title="Drive video"
+                        allow="autoplay"
+                      />
+                    );
+                  }
+                  if (isMp4) {
+                    return (
+                      <video
+                        controls
+                        className="w-full rounded-lg border border-slate-200"
+                        style={{ aspectRatio: "16 / 9" }}
+                      >
+                        <source src={first} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    );
+                  }
 
-    // Otherwise, render up to 2 images — stacked vertically (no fixed height)
-    return items.slice(0, 2).map((src, i) => (
-      <img
-        key={i}
-        src={src}
-        alt={`Solution illustration ${i + 1}`}
-        className="w-full rounded-lg border border-slate-200"
-      />
-    ));
-  })()}
-</div>
-
+                  // Otherwise, render up to 2 images — stacked vertically (no fixed height)
+                  return items.slice(0, 2).map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`Solution illustration ${i + 1}`}
+                      className="w-full rounded-lg border border-slate-200"
+                    />
+                  ));
+                })()}
+              </div>
 
               {Array.isArray(openProject.details?.impact) &&
                 openProject.details.impact.length > 0 && (
@@ -699,6 +714,63 @@ export default function App() {
                   <p>{openProject.details.reflection}</p>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Resume Modal */}
+      {resumeOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/50 p-6"
+          onClick={() => setResumeOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-xl max-w-4xl w-full p-6 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setResumeOpen(false)}
+              className="absolute top-3 right-3 rounded-full p-2 hover:bg-slate-100"
+              aria-label="Close resume viewer"
+            >
+              ✕
+            </button>
+
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-slate-900">Resume</h3>
+              <div className="flex items-center gap-2">
+                <a
+                  href={srcOf(RESUME_FILE)}
+                  target="_blank"
+                  rel="noopener"
+                  className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm hover:bg-slate-50"
+                >
+                  Open in new tab
+                </a>
+                <a
+                  href={srcOf(RESUME_FILE)}
+                  download
+                  className="rounded-lg bg-slate-900 text-white px-3 py-1.5 text-sm hover:bg-slate-800"
+                >
+                  Download PDF
+                </a>
+              </div>
+            </div>
+
+            <div className="w-full h-[80vh] rounded-lg border border-slate-200 overflow-hidden">
+              <object
+                data={srcOf(RESUME_FILE)}
+                type="application/pdf"
+                className="w-full h-full"
+              >
+                {/* Fallback for browsers that don't preview PDFs inline */}
+                <iframe
+                  src={srcOf(RESUME_FILE)}
+                  title="Resume PDF"
+                  className="w-full h-full"
+                />
+              </object>
             </div>
           </div>
         </div>
@@ -737,6 +809,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
