@@ -314,8 +314,6 @@ const schoolProjects = [
   },
 
   {
-
-  {
     id: "sp-documentary",
     title: "Mindful Strides — Short Documentary",
     role: "Coursework — Narrative for Interaction Design",
@@ -342,7 +340,6 @@ const schoolProjects = [
       solution: [
         "Final deliverable: edited short documentary (video)."
       ],
-      // 🔗 YouTube link (auto-embeds in modal)
       solutionImages: ["https://youtu.be/RhiPxF8viuU"]
     }
   }
@@ -743,6 +740,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
