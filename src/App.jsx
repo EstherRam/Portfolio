@@ -140,10 +140,7 @@ const projects = [
         "Exception: manual email verification",
         "Delete path to ensure app abides by Apple and Google Play Guidlines",
       ],
-      solutionImages: [
-        "Verify.png",
-        "Delete.png",
-      ],
+      solutionImages: ["Verify.png", "Delete.png"],
       impact: [
         "Resolved debates on strict vs open",
         "Scalable, low-overhead model",
@@ -179,13 +176,8 @@ const projects = [
         "Persistent filters per mode",
         "Always-visible search in Search mode",
       ],
-      // PLACEHOLDERS
-      problemImage:
-        "Search.png",
-      solutionImages: [
-        "1.png",
-        "2.png",
-      ],
+      problemImage: "Search.png",
+      solutionImages: ["1.png", "2.png"],
       impact: [
         "Faster, clearer discovery",
         "Consistent filter mental model",
@@ -221,13 +213,8 @@ const projects = [
         "Visual evidence + expected behaviors",
         "Consolidated backlog",
       ],
-      // PLACEHOLDERS
-      problemImage:
-        "Doc.png",
-      solutionImages: [
-        "Git.png",
-        "Ticket.png",
-      ],
+      problemImage: "Doc.png",
+      solutionImages: ["Git.png", "Ticket.png"],
       impact: [
         "Reduced ambiguity and duplication",
         "Faster fixes with traceability",
@@ -239,7 +226,6 @@ const projects = [
   },
 ];
 
-/* ---------- School projects (3) ---------- */
 /* ---------- School projects (3) ---------- */
 const schoolProjects = [
   {
@@ -269,9 +255,7 @@ const schoolProjects = [
         "Refined iconography and restrained color so meaning reads first, style second"
       ],
       problemImage: "No.png",
-      solutionImages: [
-        "Visual.png",
-      ],
+      solutionImages: ["Visual.png"],
       impact: [
         "Cleaner hierarchy makes it easy to scan how thoughts and feelings evolve across the routine",
         "Connective visual devices (lines/footprints) make causal links more apparent at a glance"
@@ -354,6 +338,37 @@ const schoolProjects = [
       reflection:
         "Accessibility basics + narrative framing = friendlier public UX."
     }
+  },
+
+  /* ====== #4: FINAL PROJECT — YouTube video ====== */
+  {
+    id: "sp-documentary",
+    title: "Mindful Strides — Short Documentary",
+    role: "Coursework — Narrative for Interaction Design",
+    year: "2023",
+    tags: ["Documentary", "Storytelling", "Editing", "Mental Health"],
+    heroColor: "from-teal-100 to-white",
+    image: "https://placehold.co/800x480?text=Mindful+Strides",
+    summary:
+      "A short documentary following Jordan as he trains for a half-marathon to manage anxiety and work stress.",
+    details: {
+      overview:
+        "Real-world footage shows a progression from stress and uncertainty to confidence through running.",
+      problem:
+        "High work stress and anxiety; the physical challenge of starting long-distance training.",
+      process: [
+        "Story worksheet (context, character, conflict, solution, denouement)",
+        "Storyboard & style frames",
+        "Capture, edit, color, and sound polish"
+      ],
+      solution: [
+        "Final deliverable: edited short documentary (video)."
+      ],
+      // Problem stays an image
+      problemImage: "https://placehold.co/1200x700?text=Documentary+Problem",
+      // 🔗 YouTube link (auto-embeds in modal)
+      solutionImages: ["https://youtu.be/RhiPxF8viuU"]
+    }
   }
 ];
 
@@ -367,7 +382,7 @@ export default function App() {
     orderedIntern.find((p) => p.id === openId) ||
     schoolProjects.find((p) => p.id === openId);
 
-  // Compute normalized image sources for the modal (safe even if openProject is null)
+  // Compute normalized image/video sources for the modal
   const problemSrc = srcOf(getProblemImage(openProject));
   const solutionSrcs = getSolutionImages(openProject).map(srcOf);
 
@@ -401,7 +416,7 @@ export default function App() {
             </h1>
             <p className="mt-4 text-slate-600 leading-relaxed">
               I design accessible, thoughtful experiences—balancing research, systems thinking, and clear UI.
-              Below is my internship work (1–7) plus three selected school projects.
+              Below is my internship work (1–7) plus selected school projects.
             </p>
           </div>
         </div>
@@ -415,7 +430,7 @@ export default function App() {
             title="Internship Case Studies"
             subtitle="Process over pixels. Each study shows problem framing, artifacts, and impact from my 2025 internship."
           />
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
             {orderedIntern.map((p) => (
               <article
                 key={p.id}
@@ -459,7 +474,7 @@ export default function App() {
           <SectionTitle
             kicker="Coursework"
             title="School Projects"
-            subtitle="Three class projects showing research, flows, prototyping, and accessibility in practice."
+            subtitle="Class projects showing research, flows, prototyping, and accessibility in practice."
           />
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {schoolProjects.map((p) => (
@@ -590,16 +605,73 @@ export default function App() {
                   </div>
                 )}
 
-              {/* Solution images (stacked vertically) */}
-              <div className="grid grid-cols-1 gap-3">
-                {solutionSrcs.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`Solution illustration ${i + 1}`}
-                    className="w-full rounded-lg border border-slate-200"
-                  />
-                ))}
+              {/* Solution media (image(s) or video) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {(() => {
+                  const items = solutionSrcs; // already through srcOf
+                  const first = items[0] || "";
+                  const isMp4 = /\.mp4(\?.*)?$/i.test(first);
+                  const yt = first.match(
+                    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/
+                  );
+                  const vimeo = first.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+                  const drive = first.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+
+                  // If the first entry is a video link, render only that video
+                  if (yt) {
+                    const id = yt[1];
+                    return (
+                      <iframe
+                        className="w-full aspect-video rounded-lg border border-slate-200"
+                        src={`https://www.youtube-nocookie.com/embed/${id}`}
+                        title="Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    );
+                  }
+                  if (vimeo) {
+                    const id = vimeo[1];
+                    return (
+                      <iframe
+                        className="w-full aspect-video rounded-lg border border-slate-200"
+                        src={`https://player.vimeo.com/video/${id}`}
+                        title="Vimeo video"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                      />
+                    );
+                  }
+                  if (drive) {
+                    const id = drive[1];
+                    return (
+                      <iframe
+                        className="w-full aspect-video rounded-lg border border-slate-200"
+                        src={`https://drive.google.com/file/d/${id}/preview`}
+                        title="Drive video"
+                        allow="autoplay"
+                      />
+                    );
+                  }
+                  if (isMp4) {
+                    return (
+                      <video controls className="w-full rounded-lg border border-slate-200">
+                        <source src={first} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    );
+                  }
+
+                  // Otherwise, show up to 2 images
+                  return items.slice(0, 2).map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`Solution illustration ${i + 1}`}
+                      className="w-full rounded-lg border border-slate-200"
+                    />
+                  ));
+                })()}
               </div>
 
               {Array.isArray(openProject.details?.impact) &&
@@ -631,10 +703,14 @@ export default function App() {
           <div>
             <h3 className="text-lg font-semibold text-slate-900">About</h3>
             <p className="mt-3 text-slate-600 text-sm leading-relaxed">
-             As an Interaction Designer, my core philosophy is grounded in the belief that design has the power to transform user experiences and address real-world challenges. I consider users as the heartbeat of the design process and prioritize their needs and preferences. My commitment lies in crafting digital experiences that are not only intuitive and accessible but also visually engaging.
-          In my design approach, I emphasize user research, wireframing, and prototyping as essential tools to create solutions that resonate with the end user. I believe that design should be a force for positive change in people's lives.
-          Through my journey in UX, I have come to appreciate that collaboration and continuous learning are the cornerstones of successful design. I find inspiration from interactions with experienced professionals and my professors, who are active in the design community.
-          In this ever-evolving field, my goal as an Interaction Designer is to push the boundaries of design, seeking innovative solutions and making a meaningful impact on the lives of those who interact with my work. I am excited about the endless possibilities in this field and look forward to connecting with fellow professionals who share this passion for design excellence.
+              As an Interaction Designer, my core philosophy is grounded in the belief that design
+              has the power to transform user experiences and address real-world challenges. I consider
+              users as the heartbeat of the design process and prioritize their needs and preferences.
+              My commitment lies in crafting digital experiences that are not only intuitive and
+              accessible but also visually engaging. In my design approach, I emphasize user research,
+              wireframing, and prototyping as essential tools to create solutions that resonate with
+              the end user. Through my journey in UX, I have come to appreciate that collaboration and
+              continuous learning are the cornerstones of successful design.
             </p>
           </div>
           <div id="contact">
@@ -663,6 +739,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
