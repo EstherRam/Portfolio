@@ -320,7 +320,7 @@ const schoolProjects = [
     year: "2023",
     tags: ["Documentary", "Storytelling", "Editing", "Mental Health"],
     heroColor: "from-teal-100 to-white",
-    image: "https://placehold.co/800x480?text=Mindful+Strides",
+    image: "/Portfolio/DocPage.png",
     summary:
       "A short documentary following Jordan as he trains for a half-marathon to manage anxiety and work stress.",
     details: {
@@ -336,7 +336,7 @@ const schoolProjects = [
         "Storyboard & style frames",
         "Capture, edit, color, and sound polish"
       ],
-      processImages: ["Process1.png", "Process2.png"],
+      processImages: ["StoryB.png", "Style.png"],
       solution: [
         "Final deliverable: edited short documentary (video)."
       ],
