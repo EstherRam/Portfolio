@@ -28,9 +28,11 @@ const srcOf = (p) => {
   return base + cleaned;
 };
 
-// Normalize to exactly 1 problem image (falls back to card image if missing)
+// Normalize to exactly 1 problem image (falls back to card image if allowed)
 const getProblemImage = (proj) => {
   const d = proj?.details || {};
+  // If the project explicitly opts out of problem image (e.g., to show Purpose instead), return empty
+  if (d.noProblemImage || d.purpose) return "";
   return d.problemImage || d.problemImg || proj?.image || "";
 };
 
@@ -44,11 +46,18 @@ const getSolutionImages = (proj) => {
   if (d.solutionImage2) out.push(d.solutionImage2);
   if (d.roadmapImage) out.push(d.roadmapImage);
 
-  // Fallbacks ensure there are always two
+  // Fallbacks ensure there are always two (only for image-based projects)
   const fallback = proj?.image ? [proj.image, proj.image] : [];
   const uniq = [...new Set(out.filter(Boolean))];
   const two = [...uniq, ...fallback].slice(0, 2);
   return two;
+};
+
+// Optional: up to 2 process images under the Process list
+const getProcessImages = (proj) => {
+  const d = proj?.details || {};
+  const arr = Array.isArray(d.processImages) ? d.processImages.filter(Boolean) : [];
+  return arr.slice(0, 2);
 };
 
 /* ---------- UI helpers ---------- */
@@ -226,7 +235,7 @@ const projects = [
   },
 ];
 
-/* ---------- School projects (3) ---------- */
+/* ---------- School projects (3 + final) ---------- */
 const schoolProjects = [
   {
     id: "sp-visualize-experience",
@@ -305,42 +314,7 @@ const schoolProjects = [
   },
 
   {
-    id: "sp-museumkiosk",
-    title: "Museum Kiosk Redesign",
-    role: "Coursework — Interaction Design",
-    year: "2023",
-    tags: ["Kiosk", "Accessibility", "Microcopy"],
-    summary:
-      "Touch kiosk with larger targets, stronger contrast, and story-led navigation.",
-    heroColor: "from-orange-100 to-white",
-    image: "https://placehold.co/800x480?text=Museum+Kiosk",
-    details: {
-      overview:
-        "Redesign for mixed-age visitors with varied tech familiarity.",
-      problem:
-        "Small targets and unclear ‘back to exhibit’ paths caused errors.",
-      process: [
-        "Heuristic audit + field observation",
-        "Tap-target sizing + contrast tests",
-        "Story-first browse prototype"
-      ],
-      solution: [
-        "44px min touch targets",
-        "Persistent ‘Back to Exhibit’ affordance",
-        "Narrative browse (People • Places • Objects)"
-      ],
-      problemImage: "https://placehold.co/1200x700?text=Museum+Kiosk+Problem",
-      solutionImages: [
-        "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+1",
-        "https://placehold.co/1200x700?text=Museum+Kiosk+Solution+2"
-      ],
-      impact: ["Error taps −41%", "Clearer exits; dwell time ↑"],
-      reflection:
-        "Accessibility basics + narrative framing = friendlier public UX."
-    }
-  },
 
-  /* ====== #4: FINAL PROJECT — YouTube video ====== */
   {
     id: "sp-documentary",
     title: "Mindful Strides — Short Documentary",
@@ -354,6 +328,9 @@ const schoolProjects = [
     details: {
       overview:
         "Real-world footage shows a progression from stress and uncertainty to confidence through running.",
+      purpose:
+        "Demonstrate how structured physical activity can support mental well-being by telling a grounded, human story with clear narrative beats.",
+      noProblemImage: true,
       problem:
         "High work stress and anxiety; the physical challenge of starting long-distance training.",
       process: [
@@ -361,11 +338,10 @@ const schoolProjects = [
         "Storyboard & style frames",
         "Capture, edit, color, and sound polish"
       ],
+      processImages: ["Process1.png", "Process2.png"],
       solution: [
         "Final deliverable: edited short documentary (video)."
       ],
-      // Problem stays an image
-      problemImage: "https://placehold.co/1200x700?text=Documentary+Problem",
       // 🔗 YouTube link (auto-embeds in modal)
       solutionImages: ["https://youtu.be/RhiPxF8viuU"]
     }
@@ -385,6 +361,7 @@ export default function App() {
   // Compute normalized image/video sources for the modal
   const problemSrc = srcOf(getProblemImage(openProject));
   const solutionSrcs = getSolutionImages(openProject).map(srcOf);
+  const processSrcs = getProcessImages(openProject).map(srcOf);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-800">
@@ -572,14 +549,24 @@ export default function App() {
                 </div>
               )}
 
-              {/* Problem image (1) */}
-              <div>
-                <img
-                  src={problemSrc}
-                  alt="Problem illustration"
-                  className="w-full rounded-lg border border-slate-200"
-                />
-              </div>
+              {/* Optional Purpose (shown for projects that define it) */}
+              {openProject.details?.purpose && (
+                <div>
+                  <h4 className="font-medium text-slate-900">Purpose</h4>
+                  <p>{openProject.details.purpose}</p>
+                </div>
+              )}
+
+              {/* Problem image (1) — only if provided */}
+              {problemSrc && (
+                <div>
+                  <img
+                    src={problemSrc}
+                    alt="Problem illustration"
+                    className="w-full rounded-lg border border-slate-200"
+                  />
+                </div>
+              )}
 
               {Array.isArray(openProject.details?.process) &&
                 openProject.details.process.length > 0 && (
@@ -590,6 +577,20 @@ export default function App() {
                         <li key={i}>{step}</li>
                       ))}
                     </ul>
+
+                    {/* Optional Process images (up to 2) */}
+                    {processSrcs.length > 0 && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                        {processSrcs.map((src, i) => (
+                          <img
+                            key={i}
+                            src={src}
+                            alt={`Process illustration ${i + 1}`}
+                            className="w-full h-64 object-cover rounded-lg border border-slate-200"
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -605,7 +606,7 @@ export default function App() {
                   </div>
                 )}
 
-              {/* Solution media (image(s) or video) */}
+              {/* Solution media (image(s) or video) — unified sizing */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {(() => {
                   const items = solutionSrcs; // already through srcOf
@@ -617,12 +618,12 @@ export default function App() {
                   const vimeo = first.match(/vimeo\.com\/(?:video\/)?(\d+)/);
                   const drive = first.match(/drive\.google\.com\/file\/d\/([^/]+)/);
 
-                  // If the first entry is a video link, render only that video
+                  // If the first entry is a video link, render only that video (same size as images)
                   if (yt) {
                     const id = yt[1];
                     return (
                       <iframe
-                        className="w-full aspect-video rounded-lg border border-slate-200"
+                        className="w-full h-64 rounded-lg border border-slate-200"
                         src={`https://www.youtube-nocookie.com/embed/${id}`}
                         title="Video"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -634,7 +635,7 @@ export default function App() {
                     const id = vimeo[1];
                     return (
                       <iframe
-                        className="w-full aspect-video rounded-lg border border-slate-200"
+                        className="w-full h-64 rounded-lg border border-slate-200"
                         src={`https://player.vimeo.com/video/${id}`}
                         title="Vimeo video"
                         allow="autoplay; fullscreen; picture-in-picture"
@@ -646,7 +647,7 @@ export default function App() {
                     const id = drive[1];
                     return (
                       <iframe
-                        className="w-full aspect-video rounded-lg border border-slate-200"
+                        className="w-full h-64 rounded-lg border border-slate-200"
                         src={`https://drive.google.com/file/d/${id}/preview`}
                         title="Drive video"
                         allow="autoplay"
@@ -655,20 +656,23 @@ export default function App() {
                   }
                   if (isMp4) {
                     return (
-                      <video controls className="w-full rounded-lg border border-slate-200">
+                      <video
+                        controls
+                        className="w-full h-64 rounded-lg border border-slate-200"
+                      >
                         <source src={first} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     );
                   }
 
-                  // Otherwise, show up to 2 images
+                  // Otherwise, show up to 2 images (same height as video)
                   return items.slice(0, 2).map((src, i) => (
                     <img
                       key={i}
                       src={src}
                       alt={`Solution illustration ${i + 1}`}
-                      className="w-full rounded-lg border border-slate-200"
+                      className="w-full h-64 object-cover rounded-lg border border-slate-200"
                     />
                   ));
                 })()}
@@ -739,6 +743,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
