@@ -603,77 +603,82 @@ export default function App() {
                   </div>
                 )}
 
-              {/* Solution media (image(s) or video) — unified sizing */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {(() => {
-                  const items = solutionSrcs; // already through srcOf
-                  const first = items[0] || "";
-                  const isMp4 = /\.mp4(\?.*)?$/i.test(first);
-                  const yt = first.match(
-                    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/
-                  );
-                  const vimeo = first.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-                  const drive = first.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+             {/* Solution media (image(s) or video) — vertical stack; video full-width 16:9 */}
+<div className="grid grid-cols-1 gap-3">
+  {(() => {
+    const items = solutionSrcs; // already through srcOf
+    const first = items[0] || "";
+    const isMp4 = /\.mp4(\?.*)?$/i.test(first);
+    const yt = first.match(
+      /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/
+    );
+    const vimeo = first.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    const drive = first.match(/drive\.google\.com\/file\/d\/([^/]+)/);
 
-                  // If the first entry is a video link, render only that video (same size as images)
-                  if (yt) {
-                    const id = yt[1];
-                    return (
-                      <iframe
-                        className="w-full h-64 rounded-lg border border-slate-200"
-                        src={`https://www.youtube-nocookie.com/embed/${id}`}
-                        title="Video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
-                    );
-                  }
-                  if (vimeo) {
-                    const id = vimeo[1];
-                    return (
-                      <iframe
-                        className="w-full h-64 rounded-lg border border-slate-200"
-                        src={`https://player.vimeo.com/video/${id}`}
-                        title="Vimeo video"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                      />
-                    );
-                  }
-                  if (drive) {
-                    const id = drive[1];
-                    return (
-                      <iframe
-                        className="w-full h-64 rounded-lg border border-slate-200"
-                        src={`https://drive.google.com/file/d/${id}/preview`}
-                        title="Drive video"
-                        allow="autoplay"
-                      />
-                    );
-                  }
-                  if (isMp4) {
-                    return (
-                      <video
-                        controls
-                        className="w-full h-64 rounded-lg border border-slate-200"
-                      >
-                        <source src={first} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    );
-                  }
+    // If the first entry is a video link, render ONLY that video — full width, 16:9
+    if (yt) {
+      const id = yt[1];
+      return (
+        <iframe
+          className="w-full rounded-lg border border-slate-200"
+          style={{ aspectRatio: "16 / 9" }}
+          src={`https://www.youtube-nocookie.com/embed/${id}`}
+          title="Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      );
+    }
+    if (vimeo) {
+      const id = vimeo[1];
+      return (
+        <iframe
+          className="w-full rounded-lg border border-slate-200"
+          style={{ aspectRatio: "16 / 9" }}
+          src={`https://player.vimeo.com/video/${id}`}
+          title="Vimeo video"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      );
+    }
+    if (drive) {
+      const id = drive[1];
+      return (
+        <iframe
+          className="w-full rounded-lg border border-slate-200"
+          style={{ aspectRatio: "16 / 9" }}
+          src={`https://drive.google.com/file/d/${id}/preview`}
+          title="Drive video"
+          allow="autoplay"
+        />
+      );
+    }
+    if (isMp4) {
+      return (
+        <video
+          controls
+          className="w-full rounded-lg border border-slate-200"
+          style={{ aspectRatio: "16 / 9" }}
+        >
+          <source src={first} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      );
+    }
 
-                  // Otherwise, show up to 2 images (same height as video)
-                  return items.slice(0, 2).map((src, i) => (
-                    <img
-                      key={i}
-                      src={src}
-                      alt={`Solution illustration ${i + 1}`}
-                      className="w-full h-64 object-cover rounded-lg border border-slate-200"
-                    />
-                  ));
-                })()}
-              </div>
+    // Otherwise, render up to 2 images — stacked vertically (no fixed height)
+    return items.slice(0, 2).map((src, i) => (
+      <img
+        key={i}
+        src={src}
+        alt={`Solution illustration ${i + 1}`}
+        className="w-full rounded-lg border border-slate-200"
+      />
+    ));
+  })()}
+</div>
+
 
               {Array.isArray(openProject.details?.impact) &&
                 openProject.details.impact.length > 0 && (
