@@ -41,9 +41,15 @@ const getSolutionImages = (proj) => {
   if (d.solutionImage2) out.push(d.solutionImage2);
   if (d.roadmapImage) out.push(d.roadmapImage);
 
-  // Fallbacks ensure there are always two (only for image-based projects)
-  const fallback = proj?.image ? [proj.image, proj.image] : [];
   const uniq = [...new Set(out.filter(Boolean))];
+
+  // ❗ School projects (ids start with "sp-") should NOT be padded to two images.
+  if (String(proj?.id || "").startsWith("sp-")) {
+    return uniq.slice(0, 2);
+  }
+
+  // Fallbacks ensure there are always two (only for internship projects)
+  const fallback = proj?.image ? [proj.image, proj.image] : [];
   const two = [...uniq, ...fallback].slice(0, 2);
   return two;
 };
@@ -51,7 +57,7 @@ const getSolutionImages = (proj) => {
 const getProcessImages = (proj) => {
   const d = proj?.details || {};
   const arr = Array.isArray(d.processImages) ? d.processImages.filter(Boolean) : [];
-  const cap = proj?.id === "sp-documentary" ? 3 : 2; // ⬅ only last project gets 3
+  const cap = proj?.id === "sp-documentary" ? 3 : 2; // keep up to 3 for Mindful Strides
   return arr.slice(0, cap);
 };
 
@@ -261,7 +267,7 @@ const schoolProjects = [
         "Refined iconography and restrained colour so meaning reads first, style second"
       ],
       problemImage: "No.png",
-      solutionImages: ["Visual.png"],
+      solutionImages: ["Visual.png"], // ← only one solution image; no fallback now for school projects
       impact: [
         "Cleaner hierarchy makes it easy to scan how thoughts and feelings evolve across the routine",
         "Connective visual devices (lines/footprints) make causal links more apparent at a glance"
@@ -299,7 +305,7 @@ const schoolProjects = [
         "Improve discoverability of privacy controls from main settings and footer."
       ],
       problemImage: "Missing.png",
-      solutionImages: ["Pop.png", "Data.png"],   // ensures two images
+      solutionImages: ["Pop.png", "Data.png"],   // ensures two images for this project if provided
       impact: [
         "Reduces effort to discover and adjust data preferences",
         "Clearer access and labeling increase perceived transparency",
@@ -579,11 +585,7 @@ export default function App() {
                     {/* Optional Process images (up to 2; 3 for final project) */}
                     {processSrcs.length > 0 && (
                       <div
-                        className={`grid grid-cols-1 ${
-                          openProject?.id === "sp-documentary" && processSrcs.length === 3
-                            ? "md:grid-cols-3"
-                            : "md:grid-cols-2"
-                        } gap-3 mt-3`}
+                        className={`grid grid-cols-1 md:grid-cols-2 gap-3 mt-3`}
                       >
                         {processSrcs.map((src, i) => (
                           <img
