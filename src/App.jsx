@@ -278,43 +278,51 @@ const schoolProjects = [
   },
 
   /* ====== #2: VIMEO DATA TRANSPARENCY ====== */
-  {
-    id: "sp-vimeo-transparency",
-    title: "Vimeo Data Transparency Prototype",
-    role: "Coursework — Service/UX",
-    year: "2024",
-    tags: ["Data Transparency", "Dark Patterns", "Privacy UX", "Prototype"],
-    heroColor: "from-cyan-100 to-white",
-    image: "Data.png",
-    summary:
-      "Vimeo was selected after finding a data-transparency dark pattern: privacy details are hard to discover—tucked under a low-contrast footer Legal tab—unlike clearer patterns on other services. The project proposes a more user-friendly way to see and control what’s collected and how it’s used.",
-    details: {
-      overview:
-        "Prototype to replace hidden information with easily seen plain-language disclosures and a focused preference flow for data collection/sharing.",
-      problem:
-        "Key privacy info is not obvious—hidden under a footer ‘Legal’ tab with subdued styling—creating a transparency dark pattern.",
-      process: [
-        "POEMS analysis of Vimeo’s data touchpoints and messaging",
-        "Five Human Factors framing (physical/cognitive/social/cultural/emotional)",
-        "Competitive/heuristic pass on transparency patterns",
-        "Low→mid→high fidelity wireframes; feedback-driven revisions"
-      ],
-      solution: [
-        "Show a Data Collection Preferences dialog after login/sign-up is submitted, with a clear notice describing defaults if no choice is made.",
-        "Use plain-language ‘we collect’ / ‘we share’ summaries with learn-more links.",
-        "Improve discoverability of privacy controls from main settings and footer."
-      ],
-      problemImage: "Missing.png",
-      solutionImages: ["Pop.png", "Data.png"],   // ensures two images for this project if provided
-      impact: [
-        "Reduces effort to discover and adjust data preferences",
-        "Clearer access and labeling increase perceived transparency",
-        "Avoids on-entry interruption in favor of task-aligned timing"
-      ],
-      reflection:
-        "Positioning consent where users already commit (post-login) respects flow while still highlighting control."
-    }
-  },
+ {
+  id: "sp-sweet-dreams-collab",
+  title: "Sweet Dreams — Cycling Keychain & Community Platform",
+  role: "Collaborative Project — UX / Product Concept / Visual Design",
+  year: "2025",
+  tags: ["Product Concept", "UX/UI", "Collaboration", "Branding", "Prototyping"],
+  heroColor: "from-green-200 to-white",
+  image: "VeloraFeed.png", 
+  summary:
+    "A collaborative project designing an upcycled bike-chain keychain paired with a community-driven digital platform for a local bike shop. I designed the community webpage UI, created the bike-chain logo, and produced the original keychain concept sketch, which was later refined into the final physical prototype by a teammate.",
+  details: {
+    overview:
+      "Our team created a hybrid physical–digital solution: a custom keychain made from real bike chain links and a connected online community hub for casual riders and cycling enthusiasts. The goal was to strengthen brand identity, encourage engagement, and provide a physical token that ties users into a digital club experience.",
+    problem:
+      "Cyclists lacked a sense of community identity tied to the shop, and the shop needed a meaningful, sustainable, low-cost product that could also connect users to an online space.",
+    process: [
+      "Group problem framing, brainstorming (Crazy 8s), and decision matrix evaluation",
+      "Sketching physical product concepts, including the detachable digital-display keychain",
+      "Designing the bike-chain logo used across product and digital assets",
+      "Creating the Community Feed webpage UI and navigation structure",
+      "Prototyping and user testing of both the keychain and the website",
+      "Iterating based on feedback: clearer website flow, login placement, keychain customization"
+    ],
+    solution: [
+      "An upcycled metal keychain concept using real bike chain links",
+      "Detachable design allowing the digital center piece to mount on the bike or hang on a lanyard",
+      "A unified brand identity built around a custom bike-chain emblem",
+      "A community website featuring feeds, categories, trending tags, and rider activity",
+      "Refined keychain prototype (completed by another team member)"
+    ],
+    problemImage: "KeychainSketch.png",  
+    solutionImages: [
+      "VeloraFeed.png",      // your webpage
+      "BikeChainLogo.png",   // your logo
+      "KeychainSketch.png"   // your sketch
+    ],
+    impact: [
+      "Strengthened shop identity through a sustainable, meaningful physical product",
+      "Designed a digital space promoting rider interaction and community pride",
+      "Improved user flow clarity based on testing feedback for both product and website"
+    ],
+    reflection:
+      "This project strengthened my collaborative design skills and highlighted the value of merging physical product concepts with digital experiences. Clear communication of individual roles within team work ensured a strong final outcome while preserving design integrity."
+  }
+}
 
  {
   id: "aac-app",
