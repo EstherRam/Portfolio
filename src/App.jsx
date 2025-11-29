@@ -348,13 +348,13 @@ const schoolProjects = [
       "Wireframing and low-fidelity prototyping to optimize button sizes, contrast, and layout.",
       "Iterative testing to validate clarity, speed, and usability of emergency functions."
     ],
-    processImages: ["AAC_Research.png", "AAC_Wireframes.png", "AAC_Flow.png"],
+    processImages: ["AAC_Research.png", "AAC_Wireframes.png"],
     solution: [
       "High-contrast design for readability and visual clarity.",
       "Simplified interface with large buttons optimized for adult users.",
       "Direct emergency access with preset messages for rapid communication."
     ],
-    solutionImages: ["AAC_HighFi1.png"]
+    solutionImages: ["AAC_HighFi1.png", "AAC_Flow.png]
   }
 }
 
