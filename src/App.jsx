@@ -346,7 +346,7 @@ const schoolProjects = [
       "Simplified interface with large buttons optimized for adult users.",
       "Direct emergency access with preset messages for rapid communication."
     ],
-    solutionImages: ["AAC_HighFi1.png", "AAC_HighFi2.png", "AAC_PrototypeVideo.png"]
+    solutionImages: ["AAC_HighFi1.png"]
   }
 }
 
