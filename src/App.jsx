@@ -408,7 +408,7 @@ export default function App() {
           <SectionTitle
             kicker="Selected Work"
             title="Internship Case Studies"
-            subtitle="Process over pixels. Each study shows problem framing, artifacts, and impact from my 2025 internship."
+            subtitle="Each study shows problem framing, artifacts, and impact from my 2025 internship."
           />
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {orderedIntern.map((p) => (
