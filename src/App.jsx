@@ -396,7 +396,7 @@ export default function App() {
               Hi, I’m Esther Ramcharan — <span className="text-sky-700">Interaction Design</span> Student
             </h1>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              I’m Esther, a product designer who’s obsessed with making digital experiences feel natural, inclusive, and just… human. I love digging into accessibility, thinking about how people of all abilities actually use technology, and designing with empathy at every step.
+              Who’s obsessed with making digital experiences feel natural, inclusive, and just… human. I love digging into accessibility, thinking about how people of all abilities actually use technology, and designing with empathy at every step.
             </p>
           </div>
         </div>
