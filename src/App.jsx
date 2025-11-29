@@ -325,31 +325,31 @@ const schoolProjects = [
   heroColor: "from-blue-100 to-white",
   image: "/Portfolio/AACHero.png",
   summary:
-    "An accessible communication app designed for children and young adults using augmentative and alternative communication (AAC).",
+    "An accessible communication app designed for adults using augmentative and alternative communication (AAC), prioritizing clarity, speed, and emergency access.",
   details: {
     overview:
-      "The app provides an intuitive and inclusive interface for users to communicate effectively, integrating personalized voice options, SOS presets, and age-specific layouts.",
+      "The app provides a high-contrast, easy-to-navigate interface to help adult AAC users communicate effectively, including quick-access emergency messaging.",
     purpose:
-      "Design an accessible AAC app that empowers users of all abilities to communicate quickly and confidently, while addressing real-world accessibility challenges.",
+      "Design an accessible AAC app that allows adults to communicate efficiently, confidently, and safely in everyday and urgent situations.",
     noProblemImage: false,
     problem:
-      "AAC users often face barriers in communication due to complex interfaces, lack of personalization, and limited accessibility features for different abilities and ages.",
+      "Adult AAC users often face challenges with small buttons, low-contrast interfaces, and slow access to urgent messages, limiting their ability to communicate quickly and safely.",
     process: [
-      "User research: interviews with target users and secondary research on AAC best practices.",
-      "Mapped user flows for onboarding, message creation, and emergency scenarios.",
-      "Wireframing and prototyping in Figma for iOS and Android.",
-      "Iterative testing focused on micro-interactions, haptic feedback, and predictive messaging."
+      "User research: interviews with adult AAC users and accessibility benchmarking.",
+      "Mapped core user flows: creating messages, navigating boards, and emergency access.",
+      "Wireframing and low-fidelity prototyping to optimize button sizes, contrast, and layout.",
+      "Iterative testing to validate clarity, speed, and usability of emergency functions."
     ],
     processImages: ["AAC_Research.png", "AAC_Wireframes.png", "AAC_Flow.png"],
     solution: [
-      "Custom voice integration allowing loved ones to add their voices to text-to-speech.",
-      "Embedded SOS message presets for rapid communication in emergencies.",
-      "Microfluid-inspired buttons for clarity and urgency, reducing user errors.",
-      "Age-specific layouts optimized for younger and older users."
+      "High-contrast design for readability and visual clarity.",
+      "Simplified interface with large buttons optimized for adult users.",
+      "Direct emergency access with preset messages for rapid communication."
     ],
     solutionImages: ["AAC_HighFi1.png", "AAC_HighFi2.png", "AAC_PrototypeVideo.png"]
   }
 }
+
 ];
 
 /* ---------- Page ---------- */
