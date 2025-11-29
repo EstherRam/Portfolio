@@ -277,10 +277,10 @@ const schoolProjects = [
     }
   },
 
-  /* ====== #2: VIMEO DATA TRANSPARENCY ====== */
+  /* ====== #2: ====== */
  {
   id: "sp-sweet-dreams-collab",
-  title: "Sweet Dreams — Cycling Keychain & Community Platform",
+  title: "Cycling Keychain & Community Platform",
   role: "Collaborative Project — UX / Product Concept / Visual Design",
   year: "2025",
   tags: ["Product Concept", "UX/UI", "Collaboration", "Branding", "Prototyping"],
