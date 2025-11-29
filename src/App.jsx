@@ -322,7 +322,7 @@ const schoolProjects = [
     reflection:
       "This project strengthened my collaborative design skills and highlighted the value of merging physical product concepts with digital experiences. Clear communication of individual roles within team work ensured a strong final outcome while preserving design integrity."
   }
-}
+},
 
  {
   id: "aac-app",
