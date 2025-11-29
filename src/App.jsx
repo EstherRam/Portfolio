@@ -316,36 +316,40 @@ const schoolProjects = [
     }
   },
 
-  {
-    id: "sp-documentary",
-    title: "Mindful Strides — Short Documentary",
-    role: "Coursework — Narrative for Interaction Design",
-    year: "2023",
-    tags: ["Documentary", "Storytelling", "Editing", "Mental Health"],
-    heroColor: "from-teal-100 to-white",
-    image: "/Portfolio/DocPage.png",
-    summary:
-      "A short documentary following Jordan as he trains for a half-marathon to manage anxiety and work stress.",
-    details: {
-      overview:
-        "Real-world footage shows a progression from stress and uncertainty to confidence through running.",
-      purpose:
-        "Demonstrate how structured physical activity can support mental well-being by telling a grounded, human story with clear narrative beats.",
-      noProblemImage: true,
-      problem:
-        "High work stress and anxiety; the physical challenge of starting long-distance training.",
-      process: [
-        "Story worksheet (context, character, conflict, solution, denouement)",
-        "Storyboard & style frames",
-        "Capture, edit, colour, and sound polish"
-      ],
-      processImages: ["StoryB.png", "Style.png", "Video.png"],
-      solution: [
-        "Final deliverable: edited short documentary (video)."
-      ],
-      solutionImages: ["https://youtu.be/RhiPxF8viuU"]
-    }
+ {
+  id: "aac-app",
+  title: "AAC Communication App",
+  role: "UX & Interaction Design — Internship Project",
+  year: "2025",
+  tags: ["Accessibility", "Inclusive Design", "User Research", "Prototyping"],
+  heroColor: "from-blue-100 to-white",
+  image: "/Portfolio/AACHero.png",
+  summary:
+    "An accessible communication app designed for children and young adults using augmentative and alternative communication (AAC).",
+  details: {
+    overview:
+      "The app provides an intuitive and inclusive interface for users to communicate effectively, integrating personalized voice options, SOS presets, and age-specific layouts.",
+    purpose:
+      "Design an accessible AAC app that empowers users of all abilities to communicate quickly and confidently, while addressing real-world accessibility challenges.",
+    noProblemImage: false,
+    problem:
+      "AAC users often face barriers in communication due to complex interfaces, lack of personalization, and limited accessibility features for different abilities and ages.",
+    process: [
+      "User research: interviews with target users and secondary research on AAC best practices.",
+      "Mapped user flows for onboarding, message creation, and emergency scenarios.",
+      "Wireframing and prototyping in Figma for iOS and Android.",
+      "Iterative testing focused on micro-interactions, haptic feedback, and predictive messaging."
+    ],
+    processImages: ["AAC_Research.png", "AAC_Wireframes.png", "AAC_Flow.png"],
+    solution: [
+      "Custom voice integration allowing loved ones to add their voices to text-to-speech.",
+      "Embedded SOS message presets for rapid communication in emergencies.",
+      "Microfluid-inspired buttons for clarity and urgency, reducing user errors.",
+      "Age-specific layouts optimized for younger and older users."
+    ],
+    solutionImages: ["AAC_HighFi1.png", "AAC_HighFi2.png", "AAC_PrototypeVideo.png"]
   }
+}
 ];
 
 /* ---------- Page ---------- */
