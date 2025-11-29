@@ -10,7 +10,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }
+:focus-visible { outline: 22px solid #38bdf8; outline-offset: 2px; }
 
 html, body {
   margin: 0;
