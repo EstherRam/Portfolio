@@ -773,14 +773,7 @@ export default function App() {
           <div>
             <h3 className="text-lg font-semibold text-slate-900">About</h3>
             <p className="mt-3 text-slate-600 text-sm leading-relaxed">
-              As an Interaction Designer, my core philosophy is grounded in the belief that design
-              has the power to transform user experiences and address real-world challenges. I consider
-              users as the heartbeat of the design process and prioritize their needs and preferences.
-              My commitment lies in crafting digital experiences that are not only intuitive and
-              accessible but also visually engaging. In my design approach, I emphasize user research,
-              wireframing, and prototyping as essential tools to create solutions that resonate with
-              the end user. Through my journey in UX, I have come to appreciate that collaboration and
-              continuous learning are the cornerstones of successful design.
+              I’m an Interaction Designer who loves turning real-world challenges into thoughtful, human-centered experiences. Users are always at the heart of my work, and I’m passionate about crafting digital experiences that are intuitive, accessible, and even a little delightful. I rely on research, wireframes, and prototypes to guide my designs, but I’ve learned that collaboration, curiosity, and empathy are just as important as any tool. For me, design isn’t just about screens, it’s about making experiences that work for everyone.
             </p>
           </div>
           <div id="contact">
