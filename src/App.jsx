@@ -208,7 +208,7 @@ const projects = [
     year: "2025",
     tags: ["Tickets", "Annotations", "Dev Handoff"],
     heroColor: "from-red-100 to-white",
-    image: "/Portfolio/Tickets.png",
+    image: "/Portfolio/",
     details: {
       overview:
         "Tickets bridged UX findings and implementation with evidence and clarity.",
@@ -224,8 +224,8 @@ const projects = [
         "Visual evidence + expected behaviors",
         "Consolidated backlog",
       ],
-      problemImage: "Doc.png",
-      solutionImages: ["Git.png", "Ticket.png"],
+      problemImage: "",
+      solutionImages: ["", ""],
       impact: [
         "Reduced ambiguity and duplication",
         "Faster fixes with traceability",
