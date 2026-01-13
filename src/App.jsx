@@ -224,8 +224,8 @@ const projects = [
         "Visual evidence + expected behaviors",
         "Consolidated backlog",
       ],
-      problemImage: "",
-      solutionImages: ["Doc.png", "Git.png"],
+      problemImage: "Doc.png",
+      solutionImages: ["Git.png", "Git2.png"],
       impact: [
         "Reduced ambiguity and duplication",
         "Faster fixes with traceability",
