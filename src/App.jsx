@@ -206,9 +206,9 @@ const projects = [
       "Created/maintained 80+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
     role: "UX Documentation",
     year: "2025",
-    tags: ["Tickets", "Annotations", "Dev Handoff"],
+    tags: ["Accessibility", "Tickets", "Annotations", "Dev Handoff"],
     heroColor: "from-red-100 to-white",
-    image: "/Portfolio/Doc.png",
+    image: "/Portfolio/Tickets.png",
     details: {
       overview:
         "Tickets bridged UX findings and implementation with evidence and clarity.",
@@ -225,7 +225,7 @@ const projects = [
         "Consolidated backlog",
       ],
       problemImage: "",
-      solutionImages: ["Git.png", "Git2.png"],
+      solutionImages: ["Doc.png", "Git.png"],
       impact: [
         "Reduced ambiguity and duplication",
         "Faster fixes with traceability",
@@ -244,7 +244,7 @@ const schoolProjects = [
     title: "Visualize an Experience — Leg Day Journey",
     role: "Coursework — Information/Interaction Design",
     year: "2023",
-    tags: ["Information Visualization", "Diary Study", "Emotional Journey", "Iteration"],
+    tags: ["Accessibile Visuals", "Information Visualization", "Diary Study", "Emotional Journey", "Iteration"],
     heroColor: "from-violet-100 to-white",
     image: "/Portfolio/DP.png",
     summary:
