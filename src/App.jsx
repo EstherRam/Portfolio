@@ -203,12 +203,12 @@ const projects = [
     order: 4,
     title: "Service Ticket System UX",
     summary:
-      "Created/maintained 30+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
+      "Created/maintained 80+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
     role: "UX Documentation",
     year: "2025",
     tags: ["Tickets", "Annotations", "Dev Handoff"],
     heroColor: "from-red-100 to-white",
-    image: "/Portfolio/",
+    image: "/Portfolio/Doc.png",
     details: {
       overview:
         "Tickets bridged UX findings and implementation with evidence and clarity.",
@@ -225,7 +225,7 @@ const projects = [
         "Consolidated backlog",
       ],
       problemImage: "",
-      solutionImages: ["", ""],
+      solutionImages: ["Git.png"],
       impact: [
         "Reduced ambiguity and duplication",
         "Faster fixes with traceability",
