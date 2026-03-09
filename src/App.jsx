@@ -199,42 +199,54 @@ const projects = [
     },
   },
   {
-    id: "ticket-system",
-    order: 4,
-    title: "Service Ticket System UX",
-    summary:
-      "Created/maintained 80+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
-    role: "UX Documentation",
-    year: "2025",
-    tags: ["Accessibility", "Tickets", "Annotations", "Dev Handoff"],
-    heroColor: "from-red-100 to-white",
-    image: "/Portfolio/Tickets.png",
-    details: {
-      overview:
-        "Tickets bridged UX findings and implementation with evidence and clarity.",
-      problem:
-        "Vague/duplicated tickets without visuals slowed dev progress.",
-      process: [
-        "Systematic testing + captures",
-        "Structured issues with labels/platform notes",
-        "Linked/merged related items",
-      ],
-      solution: [
-        "Issue template enforcing clarity",
-        "Visual evidence + expected behaviors",
-        "Consolidated backlog",
-      ],
-      problemImage: "Doc.png",
-      solutionImages: ["Git.png", "Git2.png"],
-      impact: [
-        "Reduced ambiguity and duplication",
-        "Faster fixes with traceability",
-        "Cleaner backlog for planning",
-      ],
-      reflection:
-        "Good documentation is a UX artifact that moves teams.",
-    },
-  },
+  id: "ticket-system",
+  order: 4,
+  title: "Service Ticket System UX",
+  summary:
+    "Created and maintained service tickets with visuals and steps-to-reproduce, reducing duplication and improving alignment between design and development.",
+  role: "UX Documentation",
+  year: "2025",
+  tags: ["Accessibility", "Tickets", "Annotations", "Dev Alignment"],
+  heroColor: "from-red-100 to-white",
+  image: "/Portfolio/Tickets.png",
+  details: {
+    overview:
+      "During my internship with the CMPA, I supported the development of a multi-page web app by managing and restructuring GitHub service tickets. As usability and accessibility feedback accumulated, I focused on improving clarity, reducing duplication, and better aligning design intent with development work.",
+
+    problem:
+      "Feedback existed, but it wasn’t structured. Accessibility and usability concerns came from users, trustees, internal stakeholders, and informal notes or conversations. Issues were scattered across documents, sometimes duplicated, and often missing visual context, which made them difficult for developers to verify or reproduce.",
+
+    problemImage: "Doc.png",
+
+    process: [
+      "Audited existing GitHub tickets",
+      "Compared tickets to current product behavior",
+      "Merged overlapping or duplicated issues",
+      "Rewrote unclear tickets",
+      "Added annotated screenshots and screen recordings"
+    ],
+
+    solution: [
+      "Structured issues with consistent formatting",
+      "Added visual evidence and annotated screenshots",
+      "Included platform-specific notes",
+      "Consolidated the backlog",
+      "Revisited tickets as the product evolved"
+    ],
+
+    solutionImages: ["Git.png", "Git2.png"],
+
+    impact: [
+      "Reduced ambiguity and duplication",
+      "Made issues easier to reproduce",
+      "Improved alignment between design and development",
+      "Helped prevent recurring accessibility concerns"
+    ],
+
+    reflection:
+      "Good documentation supports accessibility. Clear structure reduces cognitive load not only for users but also for teams. When documentation is treated as part of the UX process, it strengthens collaboration and preserves design intent across iterations."
+  }
+},
 ];
 
 /* ---------- School projects (3 + final) ---------- */
