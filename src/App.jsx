@@ -211,38 +211,18 @@ const projects = [
     image: "/Portfolio/Tickets.png",
     details: {
       overview:
-        "During my internship with the CMPA, I supported the development of a multi-page web app by managing and restructuring GitHub service tickets. As usability and accessibility feedback accumulated, I focused on improving clarity, reducing duplication, and better aligning design intent with development work.",
+        "Tickets bridged UX findings and implementation with evidence and clarity.",
       problem:
-        "Feedback existed, but it wasn’t structured.
-
-As the product evolved, accessibility and usability concerns came from:
-Users
-• Trustees
-• Internal stakeholders
-• Informal notes and conversations
-
-However, issues were:
-• Scattered across documents
-• Sometimes duplicated
-• Missing visual context
-• Difficult to verify or reproduce
-
-This made it harder for developers to clearly understand, prioritize, and resolve problems. It also increased the risk of recurring accessibility issues across releases.",
+        "Vague/duplicated tickets without visuals slowed dev progress.",
       process: [
         "Systematic testing + captures",
         "Structured issues with labels/platform notes",
         "Linked/merged related items",
       ],
       solution: [
-        "Documentation as part of the design process
-Instead of treating tickets as static logs, I:
-• Structured issues with consistent formatting
-• Added visual evidence
-• Included platform-specific notes
-• Consolidated the backlog
-• Continued revisiting tickets as the product evolved
-
-This helped ensure accessibility considerations were not lost between design and development.",
+        "Issue template enforcing clarity",
+        "Visual evidence + expected behaviors",
+        "Consolidated backlog",
       ],
       problemImage: "Doc.png",
       solutionImages: ["Git.png", "Git2.png"],
@@ -252,9 +232,7 @@ This helped ensure accessibility considerations were not lost between design and
         "Cleaner backlog for planning",
       ],
       reflection:
-        "Good documentation supports accessibility.
-Clear structure reduces cognitive load — not only for users, but for teams.
-When documentation is treated as part of the UX process, it strengthens collaboration and preserves design intent across iterations.",
+        "Good documentation is a UX artifact that moves teams.",
     },
   },
 ];
@@ -827,7 +805,6 @@ export default function App() {
     </div>
   );
 }
-
 
 
 
