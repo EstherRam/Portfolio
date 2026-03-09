@@ -169,32 +169,33 @@ const projects = [
     "Restructured discovery so browsing and searching behave as one cohesive system with persistent filters and clearer mode transitions.",
   role: "UX Design",
   year: "2025",
-  tags: ["Discovery Flow", "Interaction Design", "Filtering"],
+  tags: ["Wireframes", "Interaction Design", "Filtering"],
   heroColor: "from-green-100 to-white",
   image: "/Portfolio/S:B.png",
 
   details: {
     overview:
-      "This project wasn’t about fixing something completely broken. Browse worked and Search worked, but together they didn’t feel like part of the same system. Every time users switched between them, the interface seemed to forget what they were doing. Filters disappeared and context reset, creating quiet friction in the discovery experience.",
+      "This project wasn’t about fixing something that was completely broken. Browse worked and Search worked independently, but together they didn’t feel like part of the same system. Each time users switched between them, the interface seemed to forget what they were doing. Filters disappeared and context reset, creating friction in the discovery experience.",
 
     problem:
-      "The biggest issue wasn’t functionality, it was flow. When users moved from Browse to Search their filters reset, active states were unclear, and it wasn’t obvious which mode they were in. The system treated Browse and Search as separate features, while users treated them as steps within the same task.",
+      "The biggest issue wasn’t functionality — it was continuity. When users moved from Browse to Search their filters reset, active states weren’t clearly communicated, and it wasn’t obvious which mode they were in. The system treated Browse and Search as separate features, while users treated them as steps within the same task.",
 
     problemImage: "Search.png",
 
     process: [
       "Mapped how users actually moved through the discovery flow",
       "Identified where context and filters were being lost",
+      "Observed that users often browsed first to explore options, then switched to search to narrow results",
       "Sketched a dual-mode discovery model",
       "Built mid-fidelity wireframes",
-      "Focused testing specifically on mode clarity and filter persistence"
+      "Focused testing on mode clarity and filter persistence"
     ],
 
     solution: [
       "Introduced a persistent dual-mode toggle between Browse and Search",
       "Maintained predictable filter behaviour across modes",
-      "Added clearer active states",
-      "Created smoother transitions between discovery methods"
+      "Added clear active states so users always know which mode they are in",
+      "Created smoother transitions between browsing and searching"
     ],
 
     solutionImages: ["1.png", "2.png"],
@@ -202,12 +203,12 @@ const projects = [
     impact: [
       "Users experienced less frustration when switching modes",
       "Filtering felt consistent and predictable",
-      "Discoverability improved",
+      "Content discoverability improved",
       "The structure became part of the core product moving forward"
     ],
 
     reflection:
-      "This project reminded me that frustration often comes from broken continuity, not broken features. When interfaces preserve context, users feel understood. Sometimes good UX isn’t about adding something new — it’s about protecting what the user has already done."
+      "This project reminded me that frustration often comes from broken continuity rather than broken features. When interfaces preserve context, users feel understood. Sometimes good UX isn’t about adding something new — it’s about protecting what the user has already done."
   }
 }
   {
