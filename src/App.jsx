@@ -125,41 +125,54 @@ const projects = [
     },
   },
   {
-    id: "renew-verification",
-    order: 2,
-    title: "Renew App — User Verification Proposal",
-    summary:
-      "Hybrid verification model balancing inclusivity, security, and scalability for the Renew community.",
-    role: "Interaction Design",
-    year: "2025",
-    tags: ["Onboarding", "Security vs UX", "Flows", "Wireframes"],
-    heroColor: "from-indigo-100 to-white",
-    image: "/Portfolio/Renew.png",
-    details: {
-      overview:
-        "Designed a verification approach that protects content while keeping onboarding welcoming.",
-      problem:
-        "Invite-only too restrictive; loose verification risks misuse and licensing issues.",
-      process: [
-        "Compared models; created evaluation matrix",
-        "Designed flows/wireframes for each method",
-        "Drafted proposal with recommendation",
-      ],
-      solution: [
-        "Primary: referral link",
-        "Fallback: hymn book challenge",
-        "Exception: manual email verification",
-        "Delete path to ensure app abides by Apple and Google Play Guidlines",
-      ],
-      solutionImages: ["Verify.png", "Delete.png"],
-      impact: [
-        "Resolved debates on strict vs open",
-        "Scalable, low-overhead model",
-        "Aligned with licensing requirements",
-      ],
-      reflection:
-        "Treating trust as a UX flow (not just a gate) improved inclusivity and control.",
-    },
+  id: "renew-verification",
+  order: 2,
+  title: "User Verification Proposal",
+  summary:
+    "Designed a layered verification system balancing security, accessibility, and scalability for the Renew platform.",
+  role: "UX Intern",
+  year: "2025",
+  tags: ["Onboarding", "Trust Systems", "Interaction Design"],
+  heroColor: "from-indigo-100 to-white",
+  image: "/Portfolio/Renew.png",
+
+  details: {
+    overview:
+      "Renew needed a way to verify users because the content inside the platform is licensed. That part was clear. The challenge was doing it without making the app feel locked down from the start. Onboarding sets the tone of the experience, so the question wasn’t whether to verify users — it was how to structure verification in a way that still felt welcoming.",
+
+    problem:
+      "Two ideas kept coming up: invite-only access or fully open access. One leaned heavily toward protection, the other toward accessibility. Neither felt balanced. The discussion kept circling around security versus openness because verification was being treated as a single gate at the start of the experience.",
+
+    problemImage: "Verify.png",
+
+    process: [
+      "Compared different verification models to understand their trade-offs",
+      "Evaluated options based on security, friction, scalability, administrative effort, and inclusivity",
+      "Mapped user flows for each model to see how they would function in practice",
+      "Created wireframes to visualize the onboarding experience",
+      "Used those flows to shift the discussion from opinions to how the system would actually work"
+    ],
+
+    solution: [
+      "Introduced a layered verification approach instead of a single entry gate",
+      "Primary method: referral link from an existing verified user",
+      "Fallback option: hymn book challenge for users without a referral",
+      "Exception path: manual email verification if the other methods fail",
+      "Added a clear account deletion flow to align with Apple and Google Play guidelines"
+    ],
+
+    solutionImages: ["Verify.png", "Delete.png"],
+
+    impact: [
+      "The hybrid model addressed licensing concerns without fully closing the system",
+      "Reduced administrative overhead",
+      "Helped move internal discussions toward a practical implementation",
+      "Verification became part of the onboarding structure rather than a strict gate"
+    ],
+
+    reflection:
+      "This project reminded me that structure shapes perception. The requirement didn’t change — users still needed to be verified. But organizing the process differently made the experience feel more reasonable. Trust isn’t something added later; it’s built into the flow."
+  }
   },
   {
   id: "browse-search",
