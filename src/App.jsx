@@ -87,169 +87,200 @@ const SectionTitle = ({ kicker, title, subtitle }) => (
 
 /* ---------- Internship case studies (4) ---------- */
 const projects = [
-  {
-    id: "cmpa-audit",
-    order: 1,
-    title: "CMPA Website Accessibility Audit",
-    summary:
-      "Full WCAG + heuristic audit with annotated screenshots, wireframed solutions, and a prioritized roadmap for CMPA’s site.",
-    role: "UX Research & Interaction Design",
-    year: "2025",
-    tags: ["WCAG 2.1", "Heuristics", "Annotated Screens", "Wireframes", "Report"],
-    heroColor: "from-sky-100 to-white",
-    image: "/Portfolio/Audit.png",
-    details: {
-      overview:
-        "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
-      problem:
-        "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and lack of onboarding created friction for first-time users.",
-      problemImage: "Audit1.png",
-      process: [
-        "Defined scope: Homepage, Magazine, Library, Checkout",
-        "WCAG 2.1 review with annotated screenshots",
-        "Heuristic evaluation using Nielsen’s 10 heuristics with severity ratings"
-      ],
-      solution: [
-        "Increase contrast in navigation and banners",
-        "Simplify checkout flow and labeling",
-        "Improve alt text and layout readability",
-        "Create a prioritized accessibility roadmap"
-      ],
-      solutionImages: ["Solution.png", "Roadmap.png"],
-      impact: [
-        "Actionable roadmap toward WCAG 2.1 compliance",
-        "Reduced friction in checkout",
-        "Clear accessibility baseline for future redesign work"
-      ],
-      reflection:
-        "Combining WCAG evaluation, heuristics, and visual annotation produced a practical roadmap for improving accessibility."
-    },
-  },
+{
+id: "cmpa-audit",
+order: 1,
+title: "CMPA Website Accessibility Audit",
+summary:
+"Full WCAG + heuristic audit with annotated screenshots, wireframed solutions, and a prioritized roadmap for CMPA’s site.",
+role: "UX Intern",
+year: "2025",
+tags: ["Accessibility", "WCAG 2.1", "Heuristic Evaluation"],
+heroColor: "from-sky-100 to-white",
+image: "/Portfolio/Audit.png",
 
-  {
-    id: "renew-verification",
-    order: 2,
-    title: "Renew App — User Verification Proposal",
-    summary:
-      "Designed a layered verification model balancing accessibility, trust, and licensing requirements.",
-    role: "Interaction Design",
-    year: "2025",
-    tags: ["Onboarding", "Trust Systems", "Flows", "Wireframes"],
-    heroColor: "from-indigo-100 to-white",
-    image: "/Portfolio/Renew.png",
-    details: {
-      overview:
-        "Renew required user verification because the content within the app is licensed. The challenge was designing a system that protected content while keeping onboarding welcoming.",
-      problem:
-        "Two approaches dominated the discussion: invite-only access or fully open access. One prioritized protection while the other prioritized accessibility. Neither created a balanced onboarding experience.",
-      process: [
-        "Compared verification models across security, friction, scalability, and inclusivity",
-        "Mapped onboarding flows for each approach",
-        "Created wireframes demonstrating verification paths",
-        "Used visual flows to help stakeholders evaluate trade-offs"
-      ],
-      solution: [
-        "Primary: referral link verification",
-        "Fallback: hymn-book challenge verification",
-        "Exception: manual email verification",
-        "Account deletion flow aligned with Apple and Google Play guidelines"
-      ],
-      solutionImages: ["Verify.png", "Delete.png"],
-      impact: [
-        "Balanced accessibility with licensing protection",
-        "Reduced administrative overhead",
-        "Helped stakeholders evaluate verification trade-offs",
-        "Integrated trust directly into onboarding flow"
-      ],
-      reflection:
-        "This project reinforced that structure shapes perception. The requirement stayed the same, but organizing verification inside onboarding made the experience feel more reasonable."
-    },
-  },
+details: {
+overview:
+"During my internship with the CMPA, I conducted an accessibility and usability audit of key areas of the website. The goal was to identify barriers affecting navigation, readability, and task completion.",
 
-  {
-    id: "browse-search",
-    order: 3,
-    title: "Browse & Search Redesign",
-    summary:
-      "Restructured discovery so browsing and searching behave as one cohesive system with persistent filters.",
-    role: "UX Design",
-    year: "2025",
-    tags: ["Wireframes", "Interaction Design", "Filtering"],
-    heroColor: "from-green-100 to-white",
-    image: "/Portfolio/S:B.png",
-    details: {
-      overview:
-        "Browse and search both worked individually, but switching between them created friction. Filters reset and context disappeared.",
-      problem:
-        "The system treated Browse and Search as separate features while users treated them as steps in the same task. Filters reset when switching modes and active states were unclear.",
-      problemImage: "Search.png",
-      process: [
-        "Mapped how users moved between browsing and searching",
-        "Identified where context and filters were lost",
-        "Sketched a dual-mode discovery model",
-        "Built mid-fidelity wireframes",
-        "Tested specifically for filter persistence and clarity"
-      ],
-      solution: [
-        "Persistent dual-mode toggle between Browse and Search",
-        "Predictable filter behavior across modes",
-        "Clear active states",
-        "Smoother transitions between discovery methods"
-      ],
-      solutionImages: ["1.png", "2.png"],
-      impact: [
-        "Reduced frustration when switching discovery modes",
-        "Filtering felt more predictable",
-        "Improved discoverability",
-        "Discovery structure became part of the core product"
-      ],
-      reflection:
-        "Frustration often comes from broken continuity rather than broken features. Preserving context helps users feel understood."
-    },
-  },
+problem:
+"The site contained accessibility and usability issues that made navigation and checkout difficult, particularly for older users. Low contrast, cluttered navigation, confusing checkout steps, and inconsistent alt text created unnecessary friction.",
 
-  {
-    id: "ticket-system",
-    order: 4,
-    title: "Service Ticket System UX",
-    summary:
-      "Restructured GitHub service tickets with annotated visuals and clearer issue framing to align accessibility feedback with development.",
-    role: "UX Documentation",
-    year: "2025",
-    tags: ["Accessibility", "GitHub", "Documentation", "Dev Alignment"],
-    heroColor: "from-red-100 to-white",
-    image: "/Portfolio/Tickets.png",
-    details: {
-      overview:
-        "During my internship with the CMPA, I supported development of a multi-page web app by managing and restructuring GitHub service tickets.",
-      problem:
-        "Accessibility and usability feedback existed but wasn’t structured. Issues were scattered across documents, duplicated, missing visual context, and difficult to reproduce.",
-      problemImage: "Doc.png",
-      process: [
-        "Audited existing GitHub tickets",
-        "Compared tickets to current product behaviour",
-        "Merged duplicated issues",
-        "Rewrote unclear tickets",
-        "Added annotated screenshots and screen recordings"
-      ],
-      solution: [
-        "Structured issues with consistent formatting",
-        "Added visual evidence",
-        "Included platform-specific notes",
-        "Consolidated backlog",
-        "Continued revisiting tickets as the product evolved"
-      ],
-      solutionImages: ["Git.png", "Git2.png"],
-      impact: [
-        "Reduced ambiguity and duplication",
-        "Made issues easier to reproduce",
-        "Improved alignment between design and development",
-        "Helped prevent recurring accessibility concerns"
-      ],
-      reflection:
-        "Good documentation supports accessibility. Clear structure reduces cognitive load for teams and preserves design intent."
-    },
-  },
+problemImage: "Audit1.png",
+
+process: [
+"Defined audit scope across homepage, magazine, library, and checkout",
+"Conducted WCAG 2.1 accessibility review",
+"Performed heuristic evaluation using Nielsen’s 10 usability heuristics",
+"Captured annotated screenshots highlighting accessibility violations"
+],
+
+solution: [
+"Increased contrast in navigation and banner areas",
+"Simplified checkout flow and labeling",
+"Improved alt text and layout readability",
+"Created a prioritized accessibility improvement roadmap"
+],
+
+solutionImages: ["Solution.png", "Roadmap.png"],
+
+impact: [
+"Established actionable roadmap toward WCAG 2.1 compliance",
+"Reduced friction in critical tasks like checkout",
+"Provided clear accessibility baseline for future redesign work"
+],
+
+reflection:
+"Combining WCAG evaluation with heuristic analysis and annotated visuals created a practical guide for improving accessibility across the website."
+}
+},
+
+{
+id: "renew-verification",
+order: 2,
+title: "User Verification Proposal",
+summary:
+"Designed a layered verification model balancing accessibility, trust, and licensing requirements.",
+role: "UX Intern",
+year: "2025",
+tags: ["Onboarding", "Trust Systems", "Accessibility"],
+heroColor: "from-indigo-100 to-white",
+image: "/Portfolio/Renew.png",
+
+details: {
+overview:
+"Renew required a verification system because the content within the app is licensed. The challenge was designing a system that protected the material while still keeping onboarding welcoming.",
+
+problem:
+"Two approaches dominated the discussion: invite-only access or fully open access. One prioritized protection while the other prioritized accessibility. Neither approach created a balanced onboarding experience.",
+
+process: [
+"Compared verification models across security, friction, scalability, administrative effort, and inclusivity",
+"Mapped onboarding flows for each verification approach",
+"Created wireframes demonstrating how each system would function",
+"Used visual flows to help stakeholders evaluate trade-offs"
+],
+
+solution: [
+"Primary: referral link verification",
+"Fallback: hymn-book challenge verification",
+"Exception: manual email verification",
+"Account deletion flow aligned with Apple and Google Play guidelines"
+],
+
+solutionImages: ["Verify.png", "Delete.png"],
+
+impact: [
+"Balanced accessibility with licensing protection",
+"Reduced administrative overhead",
+"Shifted discussion toward practical user experience decisions"
+],
+
+reflection:
+"This project reinforced that structure shapes perception. The requirement didn’t change — users still needed to be verified — but organizing verification within onboarding made the experience feel far more reasonable."
+}
+},
+
+{
+id: "browse-search",
+order: 3,
+title: "Browse & Search Redesign",
+summary:
+"Reframed browse and search as one discovery system with persistent filters and clearer context between modes.",
+role: "UX Intern",
+year: "2025",
+tags: ["Discovery Flow", "Interaction Design", "Filtering"],
+heroColor: "from-green-100 to-white",
+image: "/Portfolio/S:B.png",
+
+details: {
+overview:
+"Browse and Search both worked individually, but switching between them created friction. Each time users changed modes it felt like the system forgot what they were doing.",
+
+problem:
+"Filters reset when moving between Browse and Search. Active states were unclear and it wasn’t obvious which mode users were currently in. The system treated them as separate features, but users treated them as steps within the same task.",
+
+problemImage: "Search.png",
+
+process: [
+"Mapped how people actually moved through the discovery flow",
+"Identified where context was being lost",
+"Sketched a dual-mode discovery model",
+"Created mid-fidelity wireframes",
+"Tested specifically for mode clarity and filter persistence"
+],
+
+solution: [
+"Persistent dual-mode toggle between Browse and Search",
+"Predictable filter behavior across modes",
+"Clear active states",
+"Smoother transitions between discovery methods"
+],
+
+solutionImages: ["1.png", "2.png"],
+
+impact: [
+"Reduced frustration when switching modes",
+"Filtering became consistent and predictable",
+"Improved discoverability of content",
+"Discovery structure adopted as part of the core product"
+],
+
+reflection:
+"This project reminded me that frustration often comes from broken continuity rather than broken features. Preserving context helps users feel understood."
+}
+},
+
+{
+id: "ticket-system",
+order: 4,
+title: "Service Ticket System UX",
+summary:
+"Restructured GitHub service tickets with visual evidence and clearer issue framing to align accessibility findings with development.",
+role: "UX Intern",
+year: "2025",
+tags: ["Accessibility", "GitHub", "Documentation", "Dev Alignment"],
+heroColor: "from-red-100 to-white",
+image: "/Portfolio/Tickets.png",
+
+details: {
+overview:
+"During my internship with the CMPA, I supported development of a multi-page web app by managing and restructuring GitHub service tickets.",
+
+problem:
+"Accessibility and usability feedback existed but it wasn’t structured. Issues were scattered across documents, duplicated, missing visual context, and difficult to reproduce.",
+
+problemImage: "Doc.png",
+
+process: [
+"Audited existing GitHub tickets",
+"Compared tickets to current product behaviour",
+"Merged overlapping or duplicated issues",
+"Rewrote unclear issues",
+"Added annotated screenshots and screen recordings"
+],
+
+solution: [
+"Structured issues with consistent formatting",
+"Added visual evidence to support reproduction",
+"Included platform-specific notes",
+"Consolidated the backlog",
+"Continued revisiting tickets as the product evolved"
+],
+
+solutionImages: ["Git.png", "Git2.png"],
+
+impact: [
+"Reduced ambiguity and duplication",
+"Made issues easier to reproduce",
+"Improved alignment between design and development",
+"Helped prevent recurring accessibility concerns"
+],
+
+reflection:
+"Good documentation supports accessibility. Clear structure reduces cognitive load not only for users but also for teams."
+}
+}
 ];
 
 /* ---------- School projects (3 + final) ---------- */
