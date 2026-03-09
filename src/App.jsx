@@ -102,71 +102,76 @@ const projects = [
       overview:
         "The CMPA website is essential for community members but had accessibility and usability issues that made navigation and checkout difficult, especially for older users.",
       problem:
-        "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and lack of onboarding and overall friction for first-time users.",
+        "Low contrast, cluttered navigation, confusing checkout, inconsistent alt text, and lack of onboarding created friction for first-time users.",
       problemImage: "Audit1.png",
       process: [
         "Defined scope: Homepage, Magazine, Library, Checkout",
         "WCAG 2.1 review with annotated screenshots",
-        "Heuristic evaluation (Nielsen’s 10) with severity ratings",
+        "Heuristic evaluation using Nielsen’s 10 heuristics with severity ratings"
       ],
       solution: [
-        "Increase contrast in nav and banners",
-        "Simplify checkout steps and labels",
-        "Repair/add alt text, improve layout for readability",
+        "Increase contrast in navigation and banners",
+        "Simplify checkout flow and labeling",
+        "Improve alt text and layout readability",
+        "Create a prioritized accessibility roadmap"
       ],
       solutionImages: ["Solution.png", "Roadmap.png"],
       impact: [
-        "Actionable Phase-1 roadmap toward WCAG 2.1 Compliance",
+        "Actionable roadmap toward WCAG 2.1 compliance",
         "Reduced friction in checkout",
-        "Clear baseline for future redesign",
+        "Clear accessibility baseline for future redesign work"
       ],
       reflection:
-        "Combining WCAG + heuristics with visual annotations and wireframes solutions allowed for a realistic guide for how to improve the accessibility of main website.",
+        "Combining WCAG evaluation, heuristics, and visual annotation produced a practical roadmap for improving accessibility."
     },
   },
+
   {
     id: "renew-verification",
     order: 2,
     title: "Renew App — User Verification Proposal",
     summary:
-      "Hybrid verification model balancing inclusivity, security, and scalability for the Renew community.",
+      "Designed a layered verification model balancing accessibility, trust, and licensing requirements.",
     role: "Interaction Design",
     year: "2025",
-    tags: ["Onboarding", "Security vs UX", "Flows", "Wireframes"],
+    tags: ["Onboarding", "Trust Systems", "Flows", "Wireframes"],
     heroColor: "from-indigo-100 to-white",
     image: "/Portfolio/Renew.png",
     details: {
       overview:
-        "Designed a verification approach that protects content while keeping onboarding welcoming.",
+        "Renew required user verification because the content within the app is licensed. The challenge was designing a system that protected content while keeping onboarding welcoming.",
       problem:
-        "Invite-only too restrictive; loose verification risks misuse and licensing issues.",
+        "Two approaches dominated the discussion: invite-only access or fully open access. One prioritized protection while the other prioritized accessibility. Neither created a balanced onboarding experience.",
       process: [
-        "Compared models; created evaluation matrix",
-        "Designed flows/wireframes for each method",
-        "Drafted proposal with recommendation",
+        "Compared verification models across security, friction, scalability, and inclusivity",
+        "Mapped onboarding flows for each approach",
+        "Created wireframes demonstrating verification paths",
+        "Used visual flows to help stakeholders evaluate trade-offs"
       ],
       solution: [
-        "Primary: referral link",
-        "Fallback: hymn book challenge",
+        "Primary: referral link verification",
+        "Fallback: hymn-book challenge verification",
         "Exception: manual email verification",
-        "Delete path to ensure app abides by Apple and Google Play Guidlines",
+        "Account deletion flow aligned with Apple and Google Play guidelines"
       ],
       solutionImages: ["Verify.png", "Delete.png"],
       impact: [
-        "Resolved debates on strict vs open",
-        "Scalable, low-overhead model",
-        "Aligned with licensing requirements",
+        "Balanced accessibility with licensing protection",
+        "Reduced administrative overhead",
+        "Helped stakeholders evaluate verification trade-offs",
+        "Integrated trust directly into onboarding flow"
       ],
       reflection:
-        "Treating trust as a UX flow (not just a gate) improved inclusivity and control.",
+        "This project reinforced that structure shapes perception. The requirement stayed the same, but organizing verification inside onboarding made the experience feel more reasonable."
     },
   },
+
   {
     id: "browse-search",
     order: 3,
     title: "Browse & Search Redesign",
     summary:
-      "Dual-mode toggle for discovery with persistent filters, faster search, and streamlined browsing.",
+      "Restructured discovery so browsing and searching behave as one cohesive system with persistent filters.",
     role: "UX Design",
     year: "2025",
     tags: ["Wireframes", "Interaction Design", "Filtering"],
@@ -174,65 +179,75 @@ const projects = [
     image: "/Portfolio/S:B.png",
     details: {
       overview:
-        "Discovery felt disconnected and was incomplete; browse and search lived in separate patterns.",
+        "Browse and search both worked individually, but switching between them created friction. Filters reset and context disappeared.",
       problem:
-        "No smooth transition between modes, filters reset, unclear active state, and disatisfied stakeholder.",
+        "The system treated Browse and Search as separate features while users treated them as steps in the same task. Filters reset when switching modes and active states were unclear.",
+      problemImage: "Search.png",
       process: [
-        "Assessments of pain points and outline doc of expectations provided by stakeholders",
-        "Dual-mode concept sketches",
-        "Mid-fi wireframes + annotations",
+        "Mapped how users moved between browsing and searching",
+        "Identified where context and filters were lost",
+        "Sketched a dual-mode discovery model",
+        "Built mid-fidelity wireframes",
+        "Tested specifically for filter persistence and clarity"
       ],
       solution: [
-        "Top-level toggle: Browse ↔ Search",
-        "Persistent filters per mode",
-        "Always-visible search in Search mode",
+        "Persistent dual-mode toggle between Browse and Search",
+        "Predictable filter behavior across modes",
+        "Clear active states",
+        "Smoother transitions between discovery methods"
       ],
-      problemImage: "Search.png",
       solutionImages: ["1.png", "2.png"],
       impact: [
-        "Faster, clearer discovery",
-        "Consistent filter mental model",
-        "Adopted as a core feature",
+        "Reduced frustration when switching discovery modes",
+        "Filtering felt more predictable",
+        "Improved discoverability",
+        "Discovery structure became part of the core product"
       ],
       reflection:
-        "Mode persistence prevents users feeling they ‘start over and a small toggle design change simplifies discovery’.",
+        "Frustration often comes from broken continuity rather than broken features. Preserving context helps users feel understood."
     },
   },
+
   {
     id: "ticket-system",
     order: 4,
     title: "Service Ticket System UX",
     summary:
-      "Created/maintained 80+ tickets with visuals and steps-to-reproduce; merged duplicates and clarified scope.",
+      "Restructured GitHub service tickets with annotated visuals and clearer issue framing to align accessibility feedback with development.",
     role: "UX Documentation",
     year: "2025",
-    tags: ["Accessibility", "Tickets", "Annotations", "Dev Handoff"],
+    tags: ["Accessibility", "GitHub", "Documentation", "Dev Alignment"],
     heroColor: "from-red-100 to-white",
     image: "/Portfolio/Tickets.png",
     details: {
       overview:
-        "Tickets bridged UX findings and implementation with evidence and clarity.",
+        "During my internship with the CMPA, I supported development of a multi-page web app by managing and restructuring GitHub service tickets.",
       problem:
-        "Vague/duplicated tickets without visuals slowed dev progress.",
+        "Accessibility and usability feedback existed but wasn’t structured. Issues were scattered across documents, duplicated, missing visual context, and difficult to reproduce.",
+      problemImage: "Doc.png",
       process: [
-        "Systematic testing + captures",
-        "Structured issues with labels/platform notes",
-        "Linked/merged related items",
+        "Audited existing GitHub tickets",
+        "Compared tickets to current product behaviour",
+        "Merged duplicated issues",
+        "Rewrote unclear tickets",
+        "Added annotated screenshots and screen recordings"
       ],
       solution: [
-        "Issue template enforcing clarity",
-        "Visual evidence + expected behaviors",
+        "Structured issues with consistent formatting",
+        "Added visual evidence",
+        "Included platform-specific notes",
         "Consolidated backlog",
+        "Continued revisiting tickets as the product evolved"
       ],
-      problemImage: "Doc.png",
       solutionImages: ["Git.png", "Git2.png"],
       impact: [
         "Reduced ambiguity and duplication",
-        "Faster fixes with traceability",
-        "Cleaner backlog for planning",
+        "Made issues easier to reproduce",
+        "Improved alignment between design and development",
+        "Helped prevent recurring accessibility concerns"
       ],
       reflection:
-        "Good documentation is a UX artifact that moves teams.",
+        "Good documentation supports accessibility. Clear structure reduces cognitive load for teams and preserves design intent."
     },
   },
 ];
@@ -805,6 +820,12 @@ export default function App() {
     </div>
   );
 }
+
+
+
+
+
+
 
 
 
