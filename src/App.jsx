@@ -210,7 +210,7 @@ const projects = [
     reflection:
       "This project reminded me that frustration often comes from broken continuity rather than broken features. When interfaces preserve context, users feel understood. Sometimes good UX isn’t about adding something new — it’s about protecting what the user has already done."
   }
-}
+},
   {
   id: "ticket-system",
   order: 4,
