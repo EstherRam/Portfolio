@@ -394,6 +394,55 @@ const schoolProjects = [
     ],
     solutionImages: ["AAC_HighFi1.png", "AAC_Flow.png"]
   }
+},
+  {
+  id: "aac-app-part2",
+  title: "AAC Communication App Part 2",
+  role: "UX & Interaction Design — Thesis Project",
+  year: "2025",
+  tags: ["Accessibility", "User Testing", "Iteration", "Refinement"],
+  heroColor: "from-blue-100 to-white",
+  image: "/Portfolio/AACHero.png", 
+  summary:
+    "Iteration phase focused on testing usability, refining interaction patterns, and improving clarity across navigation, onboarding, and communication features.",
+  details: {
+    overview:
+      "This phase focused on testing what was already built rather than adding new features. The goal was to understand where users hesitated, misinterpreted actions, or relied on guessing—especially in more urgent situations.",
+
+    problem:
+      "Even with accessibility considered, parts of the system were unclear in practice. Emergency actions overlapped with help content, icons and colours were sometimes ambiguous, and onboarding introduced too much information upfront.",
+
+    process: [
+      "Unmoderated testing to observe hesitation and confusion points",
+      "Feedback synthesis + pattern finding across repeated issues",
+      "A/B comparison of layout and interaction variations",
+      "SLP input to identify communication gaps",
+      "Accessibility testing using WAVE",
+      "Iterative updates based on consistent patterns"
+    ],
+
+    processImages: ["AAC_Testing.png", "AAC_Iteration.png"], // ← replace with yours
+
+    solution: [
+      "Separated emergency actions from help and onboarding to reduce hesitation",
+      "Simplified iconography for faster recognition",
+      "Adjusted colour system to better distinguish actions",
+      "Shifted onboarding to a more gradual, as-needed approach",
+      "Expanded vocabulary (questions, refusals, emotions) to support real communication"
+    ],
+
+    solutionImages: ["AAC_Update1.png", "AAC_Update2.png"], // ← replace with yours
+
+    impact: [
+      "Reduced hesitation in time-sensitive interactions",
+      "Improved clarity across navigation and actions",
+      "Lowered cognitive load by simplifying visuals and structure",
+      "Expanded communication flexibility through improved vocabulary"
+    ],
+
+    reflection:
+      "This phase made it clear that accessibility doesn’t always translate to usability. A lot of what felt obvious initially only made sense because I was familiar with it. Testing exposed those gaps, and most of the work became about reducing uncertainty rather than adding new features."
+  }
 }
 
 ];
