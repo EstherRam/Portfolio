@@ -421,7 +421,7 @@ const schoolProjects = [
       "Iterative updates based on consistent patterns"
     ],
 
-    processImages: ["AAC_Testing.png", "AAC_Iteration.png"], // ← replace with yours
+    processImages: ["AAC_Testing.png", "AAC_Iteration.png"],
 
     solution: [
       "Separated emergency actions from help and onboarding to reduce hesitation",
@@ -431,7 +431,7 @@ const schoolProjects = [
       "Expanded vocabulary (questions, refusals, emotions) to support real communication"
     ],
 
-    solutionImages: ["AAC_Update1.png", "AAC_Update2.png"], // ← replace with yours
+    solutionImages: ["AAC_Update1.png", "AAC_Update2.png"],
 
     impact: [
       "Reduced hesitation in time-sensitive interactions",
