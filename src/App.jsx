@@ -377,7 +377,6 @@ const schoolProjects = [
       "The app provides a high-contrast, easy-to-navigate interface to help adult AAC users communicate effectively, including quick-access emergency messaging.",
     purpose:
       "Design an accessible AAC app that allows adults to communicate efficiently, confidently, and safely in everyday and urgent situations.",
-    noProblemImage: false,
     problem:
       "Adult AAC users often face challenges with small buttons, low-contrast interfaces, and slow access to urgent messages, limiting their ability to communicate quickly and safely.",
     process: [
