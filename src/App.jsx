@@ -399,7 +399,7 @@ const schoolProjects = [
   id: "aac-app-part2",
   title: "AAC Communication App Part 2",
   role: "UX & Interaction Design — Thesis Project",
-  year: "2025",
+  year: "2026",
   tags: ["Accessibility", "User Testing", "Iteration", "Refinement"],
   heroColor: "from-blue-100 to-white",
   image: "/Portfolio/AACHero.png", 
