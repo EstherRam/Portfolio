@@ -61,7 +61,7 @@ const getProcessImages = (proj) => {
   return arr.slice(0, cap);
 };
 
-const RESUME_FILE = "Esther_Ramcharan_Resume_2025.pdf";
+const RESUME_FILE = "RamcharanEsther_CV _ Resume.pdf";
 
 const Tag = ({ children }) => (
   <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium text-slate-700 border-slate-200 bg-white/70">
