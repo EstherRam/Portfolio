@@ -402,7 +402,7 @@ const schoolProjects = [
   year: "2026",
   tags: ["Accessibility", "User Testing", "Iteration", "Refinement"],
   heroColor: "from-blue-100 to-white",
-  image: "/Portfolio/AAC2.png", 
+  image: "AAC2.png", 
   summary:
     "Iteration phase focused on testing usability, refining interaction patterns, and improving clarity across navigation, onboarding, and communication features.",
   details: {
