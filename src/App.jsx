@@ -405,7 +405,7 @@ const schoolProjects = [
   summary:
     "Iteration phase focused on testing usability, refining interaction patterns, and improving clarity across navigation, onboarding, and communication features.",
   details: {
-    noProblemImage: true
+    noProblemImage: true,
     overview:
       "This phase focused on testing what was already built rather than adding new features. The goal was to understand where users hesitated, misinterpreted actions, or relied on guessing—especially in more urgent situations.",
 
