@@ -364,8 +364,8 @@ const schoolProjects = [
 
  {
   id: "aac-app",
-  title: "AAC Communication App",
-  role: "UX & Interaction Design — Internship Project",
+  title: "AAC Communication App Part 1",
+  role: "UX & Interaction Design — Thesis Project",
   year: "2025",
   tags: ["Accessibility", "Inclusive Design", "User Research", "Prototyping"],
   heroColor: "from-blue-100 to-white",
