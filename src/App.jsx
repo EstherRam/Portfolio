@@ -231,7 +231,7 @@ const projects = [
   summary:
     "Created and maintained service tickets with visuals and steps-to-reproduce, reducing duplication and improving alignment between design and development.",
   role: "UX Documentation",
-  year: "2025",
+  year: "2025-Present",
   tags: ["Accessibility", "Tickets", "Annotations", "Dev Alignment"],
   heroColor: "from-red-100 to-white",
   image: "/Portfolio/Tickets.png",
