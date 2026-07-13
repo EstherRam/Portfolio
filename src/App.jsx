@@ -880,7 +880,7 @@ export default function App() {
             <p className="mt-3 text-slate-600 text-sm">
               Email:{" "}
               <a
-                href="mailto:ramchaes@sheridancollege.ca"
+                href="mailto:estherdramcharan@gmail.com"
                 className="text-sky-700 hover:underline"
               >
                 ramchaes@sheridancollege.ca
